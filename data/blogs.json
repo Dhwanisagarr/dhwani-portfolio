@@ -1,0 +1,32 @@
+[
+  {
+    "id": "design-token-architecture",
+    "title": "Why Design Tokens Are More Than CSS Variables",
+    "slug": "design-token-architecture",
+    "date": "2026-02-10",
+    "readTime": "4 min read",
+    "category": "Design Systems",
+    "summary": "Exploring how systemic design tokens allow seamless handoff between Figma design specs and production code across web and mobile.",
+    "content": "When building modern web applications, developers often mistake CSS custom properties for a complete design token system. A true design token architecture is semantic, intent-based, and decoupled from raw hex values."
+  },
+  {
+    "id": "product-thinking-for-engineers",
+    "title": "Product Thinking: The Missing Bridge in Modern Engineering",
+    "slug": "product-thinking-for-engineers",
+    "date": "2026-01-18",
+    "readTime": "6 min read",
+    "category": "Product Strategy",
+    "summary": "Why the best software engineers don't just ask 'how do we build this?', but 'why are we building this, and for whom?'",
+    "content": "Engineering excellence without product clarity often leads to beautifully built solutions for problems that nobody actually has. Product thinking forces us to step back and evaluate user intent before committing line one of code."
+  },
+  {
+    "id": "react-native-micro-interactions",
+    "title": "Crafting Tactile Micro-Interactions in Mobile Apps",
+    "slug": "react-native-micro-interactions",
+    "date": "2025-11-05",
+    "readTime": "5 min read",
+    "category": "Mobile UX",
+    "summary": "How subtle visual cues, micro-haptics, and physics-based spring animations transform app feel from static to alive.",
+    "content": "Great UI design lives in the subtle feedback loops between user touch and screen response. In mobile applications, spring-physics curves provide a sense of weight and tactile realism."
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "workExperience": [
+    {
+      "company": "4RinLabs Pvt. Ltd.",
+      "role": "Freelancer",
+      "period": "Present",
+      "description": "Designing and developing tailored digital products, web applications, and interactive user interfaces.",
+      "highlights": [
+        "Crafting responsive web solutions at the intersection of product thinking and modern frontend tech.",
+        "Collaborating directly with clients to translate business goals into intuitive digital experiences."
+      ]
+    },
+    {
+      "company": "Fyers Securities Pvt. Ltd.",
+      "role": "Apprentice",
+      "period": "Jul 25 – Dec 25",
+      "description": "Engaged in fintech product workflows, data analytics, and user experience optimizations.",
+      "highlights": [
+        "Gained hands-on exposure to financial trading systems, analytics tools, and API integrations.",
+        "Contributed to product research, UI consistency auditing, and user behavior analysis."
+      ]
+    },
+    {
+      "company": "Zidio Developments",
+      "role": "Developer Intern",
+      "period": "Feb 25 – May 25",
+      "description": "Built core application components and participated in agile development sprints.",
+      "highlights": [
+        "Developed modular web interfaces using JavaScript, HTML, and CSS.",
+        "Collaborated with cross-functional teams to resolve UI bugs and streamline frontend performance."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.E. in Computer Science and Engineering (Honours)",
+      "institution": "Mangalore Institute of Technology and Engineering (MITE)",
+      "cgpa": "8.12",
+      "year": "2025",
+      "details": "Focused on software engineering principles, algorithms, data analytics, web architecture, and user-centered design."
+    }
+  ]
+}

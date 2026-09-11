@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ep-1",
+    "quote": "Simplicity is about subtracting the obvious and adding the meaningful.",
+    "author": "John Maeda",
+    "source": "The Laws of Simplicity"
+  },
+  {
+    "id": "ep-2",
+    "quote": "Design is not just what it looks like and feels like. Design is how it works.",
+    "author": "Steve Jobs",
+    "source": "New York Times Magazine (2003)"
+  },
+  {
+    "id": "ep-3",
+    "quote": "Recognizing the need is the primary condition for design.",
+    "author": "Charles Eames",
+    "source": "Design Q&A"
+  },
+  {
+    "id": "ep-4",
+    "quote": "Details are not the details. They make the design.",
+    "author": "Charles Eames",
+    "source": "Architecture & Craft"
+  }
+]

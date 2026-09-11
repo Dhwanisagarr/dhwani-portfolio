@@ -1,0 +1,38 @@
+[
+  {
+    "id": "design-of-everyday-things",
+    "title": "The Design of Everyday Things",
+    "author": "Don Norman",
+    "status": "Read",
+    "rating": "5/5",
+    "category": "Design & Psychology",
+    "notes": "A fundamental masterclass on affordances, signifiers, feedback, and conceptual models. Changed how I view everyday objects and software interfaces."
+  },
+  {
+    "id": "refactoring-ui",
+    "title": "Refactoring UI",
+    "author": "Adam Wathan & Steve Schoger",
+    "status": "Read",
+    "rating": "5/5",
+    "category": "UI/UX",
+    "notes": "Practical tactical tips on visual hierarchy, layout spacing, color selection, and designing from an developer's perspective."
+  },
+  {
+    "id": "clean-code",
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "status": "Read",
+    "rating": "4.5/5",
+    "category": "Engineering",
+    "notes": "Essential principles on readability, meaningful variable naming, function responsibility, and maintaining long-term code health."
+  },
+  {
+    "id": "inspired",
+    "title": "INSPIRED: How to Create Tech Products Customers Love",
+    "author": "Marty Cagan",
+    "status": "Reading",
+    "rating": "5/5",
+    "category": "Product Management",
+    "notes": "Explores how top product organizations discover and deliver technology products that solve real customer problems effectively."
+  }
+]

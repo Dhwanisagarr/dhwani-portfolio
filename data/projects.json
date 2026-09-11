@@ -1,0 +1,90 @@
+[
+  {
+    "id": "aura-design-system",
+    "title": "Aura — Generative Component System",
+    "category": "Design & Frontend",
+    "tagline": "An experimental component library bridging systemic design tokens with reactive web animations.",
+    "description": "Aura was born from a curiosity to see how far web design systems can stretch when micro-interactions are driven by design tokens rather than isolated CSS hacks. Built using custom CSS variables, accessible ARIA primitives, and fluid layout math.",
+    "role": "Product Designer & Lead Developer",
+    "timeline": "2025",
+    "tools": ["Figma", "React", "JavaScript", "CSS Modules"],
+    "metrics": "Used in 4 internal prototypes, 99+ Web Vitals Score",
+    "featured": true,
+    "slug": "aura-design-system",
+    "caseStudy": {
+      "problem": "Traditional design systems often isolate visual design tokens from fluid motion, resulting in rigid, lifeless interfaces.",
+      "solution": "Created a token-driven animation engine where spacing, shadow, and color scale dynamically with mouse proximity and scroll momentum.",
+      "highlights": [
+        "Modular architecture supporting light & dark themes seamlessly",
+        "Sub-10ms render latency for dynamic glassmorphic card surfaces",
+        "Comprehensive Figma token bridge for automated export"
+      ]
+    }
+  },
+  {
+    "id": "quantflow-analytics",
+    "title": "QuantFlow — Apprentice Analytics Platform",
+    "category": "Product & Analytics",
+    "tagline": "Real-time market insights dashboard designed for intuitive data exploration.",
+    "description": "Explored during my apprenticeship at Fyers Securities. Designed to simplify multi-asset market analytics into actionable visual summaries using high-density data visualizations.",
+    "role": "Product & Tech Apprentice",
+    "timeline": "2025",
+    "tools": ["SQL", "Google Analytics", "Python", "Postman", "Figma"],
+    "metrics": "35% faster insight discovery, zero visual clutter",
+    "featured": true,
+    "slug": "quantflow-analytics",
+    "caseStudy": {
+      "problem": "Financial charts often overwhelm non-expert traders with dense numbers and unorganized data feeds.",
+      "solution": "Redesigned the onboarding and analytics workflow into contextual visual widgets with custom metric filtering.",
+      "highlights": [
+        "Interactive query builder with SQL data pipeline backend",
+        "Automated event tracking integrated via Postman API suites",
+        "Custom neon dark theme optimized for multi-monitor setups"
+      ]
+    }
+  },
+  {
+    "id": "pulse-mobile",
+    "title": "Pulse — Daily Focus & Habit Experience",
+    "category": "Development",
+    "tagline": "Cross-platform mobile companion for deep work and mental momentum.",
+    "description": "Built using React Native and Python/Flask backend. Focuses on frictionless interaction flows, offline-first data sync, and delightful micro-haptics.",
+    "role": "Developer Intern",
+    "timeline": "2025",
+    "tools": ["React Native", "JavaScript", "Flask", "Python", "Git"],
+    "metrics": "100% offline functionality, 60fps native feel",
+    "featured": true,
+    "slug": "pulse-mobile",
+    "caseStudy": {
+      "problem": "Most productivity apps add administrative overhead instead of removing friction.",
+      "solution": "Created a single-tap gesture interface with zero onboarding form friction and immediate visual feedback.",
+      "highlights": [
+        "React Native gesture-driven task manager",
+        "Flask REST API for lightweight state persistence",
+        "Custom SVG chart visualizations for weekly focus trends"
+      ]
+    }
+  },
+  {
+    "id": "echo-ai-workspace",
+    "title": "Echo — Intelligent Document Synthesizer",
+    "category": "Product Thinking",
+    "tagline": "AI-powered workspace transforming long-form content into visual graphs.",
+    "description": "A curiosity project exploring how natural language processing can augment document exploration. Synthesizes text documents into interactive knowledge maps.",
+    "role": "Creator & Full Stack Dev",
+    "timeline": "2025",
+    "tools": ["Python", "Django", "HTML", "CSS", "AWS"],
+    "metrics": "Processed over 500+ document pages in test runs",
+    "featured": true,
+    "slug": "echo-ai-workspace",
+    "caseStudy": {
+      "problem": "Reading multi-page research papers and project briefs makes finding cross-references tedious.",
+      "solution": "Combined NLP parsing with a node-graph visualizer built on top of Django APIs.",
+      "highlights": [
+        "Automatic entity extraction and keyphrase summarization",
+        "Interactive node graph UI with custom filtering",
+        "Deployed on AWS with scalable static asset hosting"
+      ]
+    }
+  }
+]

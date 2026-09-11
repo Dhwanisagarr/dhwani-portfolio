@@ -1,0 +1,51 @@
+{
+  "categories": [
+    {
+      "id": "product-analytics",
+      "name": "Product & Analytics",
+      "tagline": "Understanding user journeys, metrics, data, and behavior patterns.",
+      "items": [
+        { "name": "Google Analytics", "level": "Advanced", "icon": "bar-chart" },
+        { "name": "CleverTap", "level": "Intermediate", "icon": "activity" },
+        { "name": "AppsFlyer", "level": "Intermediate", "icon": "smartphone" },
+        { "name": "Postman", "level": "Advanced", "icon": "send" },
+        { "name": "SQL", "level": "Advanced", "icon": "database" }
+      ]
+    },
+    {
+      "id": "design",
+      "name": "Design",
+      "tagline": "Shaping visual hierarchies, interfaces, wireframes, and digital experiences.",
+      "items": [
+        { "name": "Figma", "level": "Expert", "icon": "figma" },
+        { "name": "Canva", "level": "Advanced", "icon": "image" }
+      ]
+    },
+    {
+      "id": "development",
+      "name": "Development",
+      "tagline": "Turning ideas into functional products through code and experimentation.",
+      "items": [
+        { "name": "Python", "level": "Advanced", "icon": "code" },
+        { "name": "Java", "level": "Intermediate", "icon": "terminal" },
+        { "name": "HTML", "level": "Expert", "icon": "file-code" },
+        { "name": "CSS", "level": "Expert", "icon": "layers" },
+        { "name": "JavaScript", "level": "Expert", "icon": "cpu" },
+        { "name": "React Native", "level": "Advanced", "icon": "smartphone" },
+        { "name": "Flask", "level": "Advanced", "icon": "server" },
+        { "name": "Django", "level": "Intermediate", "icon": "database" }
+      ]
+    },
+    {
+      "id": "cloud-other",
+      "name": "Cloud & Tools",
+      "tagline": "Version control, collaboration, cloud infrastructure, and deployment.",
+      "items": [
+        { "name": "Git", "level": "Expert", "icon": "git-branch" },
+        { "name": "GitHub", "level": "Expert", "icon": "github" },
+        { "name": "AWS", "level": "Intermediate", "icon": "cloud" }
+      ]
+    }
+  ]
+}
+

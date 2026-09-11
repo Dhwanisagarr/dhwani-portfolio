@@ -1,0 +1,27 @@
+[
+  {
+    "id": "cert-1",
+    "title": "B.E. Computer Science & Engineering (Honours)",
+    "issuer": "Mangalore Institute of Technology and Engineering (MITE)",
+    "year": "2025",
+    "grade": "CGPA 8.12",
+    "badge": "Academic Degree",
+    "description": "Comprehensive engineering curriculum spanning Software Architecture, Web Engineering, Database Management, and Algorithm Design."
+  },
+  {
+    "id": "cert-2",
+    "title": "Financial Trading & Market Analytics Apprenticeship",
+    "issuer": "Fyers Securities Pvt. Ltd.",
+    "year": "2025",
+    "badge": "Apprenticeship",
+    "description": "Apprenticeship focused on financial systems, user behavior analysis, and analytics platform workflows."
+  },
+  {
+    "id": "cert-3",
+    "title": "Full Stack Developer Internship",
+    "issuer": "Zidio Developments",
+    "year": "2025",
+    "badge": "Internship",
+    "description": "Hands-on experience in web application development, component architectures, and agile collaboration."
+  }
+]

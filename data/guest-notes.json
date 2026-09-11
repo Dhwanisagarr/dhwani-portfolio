@@ -1,0 +1,23 @@
+[
+  {
+    "id": "gn-1788499826867",
+    "name": "dd",
+    "role": "dd",
+    "date": "2026-09-04",
+    "message": "dd"
+  },
+  {
+    "id": "gn-1",
+    "name": "Alex Rivers",
+    "role": "Product Designer",
+    "date": "2026-08-15",
+    "message": "Loved the editorial typography and dark neon aesthetic. The 2-line floating menu interaction is super crisp!"
+  },
+  {
+    "id": "gn-2",
+    "name": "Priya Sharma",
+    "role": "Software Engineer",
+    "date": "2026-08-18",
+    "message": "Awesome work on combining product analytics with clean frontend engineering. Looking forward to seeing more projects!"
+  }
+]

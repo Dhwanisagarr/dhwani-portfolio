@@ -3,7 +3,6 @@
 import { useState } from 'react';
 
 const CATEGORIES = [
-  { id: 'all', name: 'ALL' },
   { id: 'product', name: 'PRODUCT & ANALYTICS' },
   { id: 'design', name: 'DESIGN' },
   { id: 'development', name: 'DEVELOPMENT' },
@@ -102,7 +101,7 @@ const TOOLS = [
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path d="M11.87 2c-4.4 0-4.13 1.9-4.13 1.9l.01 1.97h4.19v.6H6.01S2 6.01 2 10.42c0 4.41 3.5 4.25 3.5 4.25h1.2v-1.68s-.06-2.02 1.98-2.02h3.42s1.9.03 1.9-1.85V5.7s.29-3.7-4.13-3.7zm-2.28 1.23a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z" fill="#3776AB" />
-        <path d="M12.13 22c4.4 0 4.13-1.9 4.13-1.9l-.01-1.97h-4.19v-.6h5.93s4.01.46 4.01-3.95c0-4.41-3.5-4.25-3.5-4.25h-1.2v1.68s.06 2.02-1.98 2.02h-3.42s-1.9-.03-1.9 1.85v3.42s-.29 3.7 4.13 3.7zm2.28-1.23a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z" fill="#FFD43B" />
+        <path d="M12.13 22c4.4 0 4.13-1.9 4.13-1.9l-.01-1.97h-4.19v-.6h5.93s4.01.46 4.01-3.95c0-4.41-3.5-4.25-3.5-4.25h-1.2v1.68s.06 2.02-1.98 2.02h-3.42s-1.9-.03-1.9 1.85v3.42s-.29 3.7 4.13 3.7zm2.28-1.23a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z" fill="#E6A100" />
       </svg>
     )
   },
@@ -151,10 +150,10 @@ const TOOLS = [
     category: 'development',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="4" fill="#61DAFB" fillOpacity="0.15" />
-        <ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(30 12 12)" stroke="#61DAFB" strokeWidth="1.8" />
-        <ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(150 12 12)" stroke="#61DAFB" strokeWidth="1.8" />
-        <circle cx="12" cy="12" r="1.5" fill="#61DAFB" />
+        <rect width="24" height="24" rx="4" fill="#0088CC" fillOpacity="0.15" />
+        <ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(30 12 12)" stroke="#0088CC" strokeWidth="1.8" />
+        <ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(150 12 12)" stroke="#0088CC" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="1.5" fill="#0088CC" />
       </svg>
     )
   },
@@ -167,7 +166,7 @@ const TOOLS = [
         <path d="M14.5 2L5 11.5l3 3L17.5 5h-3z" fill="#02569B" />
         <path d="M14.5 12.5L9.5 17.5l3 3 8-8h-6z" fill="#0175C2" />
         <path d="M11 16l3.5-3.5 3.5 3.5-3.5 3.5L11 16z" fill="#02569B" />
-        <path d="M14.5 12.5L11 16l3.5 3.5L18 16l-3.5-3.5z" fill="#54C5F8" />
+        <path d="M14.5 12.5L11 16l3.5 3.5L18 16l-3.5-3.5z" fill="#0175C2" />
       </svg>
     )
   },
@@ -186,9 +185,9 @@ const TOOLS = [
     category: 'development',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="4" fill="#ffffff" fillOpacity="0.1" />
-        <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="8" y1="14" x2="16" y2="14" stroke="#efff00" strokeWidth="1.8" />
+        <rect width="24" height="24" rx="4" fill="#CC2027" fillOpacity="0.1" />
+        <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3" stroke="#CC2027" strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="8" y1="14" x2="16" y2="14" stroke="#CC2027" strokeWidth="1.8" />
       </svg>
     )
   },
@@ -209,8 +208,8 @@ const TOOLS = [
     category: 'backend_db',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="4" fill="#efff00" fillOpacity="0.12" />
-        <path d="M4 12h16M16 6l4 6-4 6M8 18l-4-6 4-6" stroke="#efff00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <rect width="24" height="24" rx="4" fill="#CC2027" fillOpacity="0.12" />
+        <path d="M4 12h16M16 6l4 6-4 6M8 18l-4-6 4-6" stroke="#CC2027" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     )
   },
@@ -271,8 +270,8 @@ const TOOLS = [
     category: 'infra',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="4" fill="#ffffff" fillOpacity="0.1" />
-        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="#ffffff" />
+        <rect width="24" height="24" rx="4" fill="#CC2027" fillOpacity="0.1" />
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="#CC2027" />
       </svg>
     )
   },
@@ -291,8 +290,8 @@ const TOOLS = [
     category: 'infra',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="4" fill="#ffffff" fillOpacity="0.1" />
-        <path d="M12 4L22 20H2L12 4z" fill="#ffffff" />
+        <rect width="24" height="24" rx="4" fill="#CC2027" fillOpacity="0.1" />
+        <path d="M12 4L22 20H2L12 4z" fill="#CC2027" />
       </svg>
     )
   },
@@ -323,8 +322,8 @@ const TOOLS = [
     category: 'workflow',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="4" fill="#ffffff" fillOpacity="0.1" />
-        <path d="M5.5 3.5L18.5 12L12.5 14L9.5 20.5L5.5 3.5Z" fill="#ffffff" stroke="#ffffff" strokeWidth="1.5" strokeLinejoin="round" />
+        <rect width="24" height="24" rx="4" fill="#CC2027" fillOpacity="0.1" />
+        <path d="M5.5 3.5L18.5 12L12.5 14L9.5 20.5L5.5 3.5Z" fill="#CC2027" stroke="#CC2027" strokeWidth="1.5" strokeLinejoin="round" />
       </svg>
     )
   },
@@ -333,8 +332,8 @@ const TOOLS = [
     category: 'workflow',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="4" fill="#efff00" fillOpacity="0.15" />
-        <path d="M12 3L4 9v6l8 6 8-6V9l-8-6zm0 2.5L18 10l-6 4.5L6 10l6-4.5zM6 11.8l5 3.7v5l-5-3.7v-5zm12 0v5l-5 3.7v-5l5-3.7z" fill="#efff00" />
+        <rect width="24" height="24" rx="4" fill="#CC2027" fillOpacity="0.15" />
+        <path d="M12 3L4 9v6l8 6 8-6V9l-8-6zm0 2.5L18 10l-6 4.5L6 10l6-4.5zM6 11.8l5 3.7v5l-5-3.7v-5zm12 0v5l-5 3.7v-5l5-3.7z" fill="#CC2027" />
       </svg>
     )
   },
@@ -362,27 +361,36 @@ const TOOLS = [
   }
 ];
 
-export default function ToolsSection() {
-  const [activeCategory, setActiveCategory] = useState('all');
+import ToolMarquee from './ToolMarquee';
+import BackgroundWatermark from './BackgroundWatermark';
 
-  const filteredTools = activeCategory === 'all'
-    ? TOOLS
-    : TOOLS.filter(tool => tool.category === activeCategory);
+export default function ToolsSection() {
+  const [activeCategory, setActiveCategory] = useState('product');
+
+  const filteredTools = TOOLS.filter(tool => tool.category === activeCategory);
 
   const getCategoryCount = (catId) => {
-    if (catId === 'all') return TOOLS.length;
     return TOOLS.filter(t => t.category === catId).length;
   };
 
   return (
-    <section id="skills" className="tools-section">
+    <section id="skills" className="tools-section" data-color="#F2D9DA">
+      {/* Giant Tiled Background Typography Watermark */}
+      <BackgroundWatermark word="TOOLS" color="rgba(185, 28, 35, 0.065)" />
+
       <div className="tools-container">
+        {/* HORIZONTAL TOOL LOGOS MARQUEE TICKER ABOVE SECTION HEADING */}
+        <ToolMarquee />
+
         {/* SECTION HEADER */}
         <div className="tools-header">
-          <span className="eyebrow font-mono">CAPABILITIES & TOOLKIT</span>
+          <div className="eyebrow-row font-mono">
+            <span className="eyebrow-dot" />
+            <span className="eyebrow">TOOLS I USE</span>
+          </div>
           <h2 className="section-title font-mono">Tools & Skillset</h2>
           <p className="section-subtitle font-sans">
-            A curated library of product, design, and engineering tools I use to craft digital experiences.
+            “A curated library of product, design, and engineering tools I use to craft digital experiences.”
           </p>
         </div>
 
@@ -418,16 +426,24 @@ export default function ToolsSection() {
       <style jsx>{`
         .tools-section {
           position: relative;
-          background-color: #060606;
-          padding: 6rem 0;
-          color: #ffffff;
+          min-height: 100vh;
+          min-height: 100dvh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background-color: transparent;
+          padding: 5.5rem 0;
+          color: #CC2027;
           width: 100%;
           box-sizing: border-box;
+          overflow: hidden;
         }
 
         .tools-container {
+          position: relative;
+          z-index: 2;
           width: 100%;
-          max-width: 1240px;
+          max-width: 1320px;
           margin: 0 auto;
           padding: 0 3.5rem;
         }
@@ -438,27 +454,43 @@ export default function ToolsSection() {
           margin-bottom: 2.75rem;
         }
 
-        .eyebrow {
-          font-size: 0.78rem;
-          letter-spacing: 0.18em;
-          color: #efff00;
+        .eyebrow-row {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
           margin-bottom: 0.4rem;
         }
 
+        .eyebrow-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #CC2027;
+          display: inline-block;
+        }
+
+        .eyebrow {
+          font-size: 0.8rem;
+          letter-spacing: 0.18em;
+          color: #CC2027;
+          font-weight: 600;
+        }
+
         .section-title {
-          font-size: clamp(2.2rem, 4vw, 3.4rem);
-          font-weight: 500;
-          color: #ffffff;
+          font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+          font-weight: 600;
+          color: #CC2027;
           letter-spacing: -0.02em;
           line-height: 1.1;
-          margin-bottom: 0.6rem;
+          margin-bottom: 0.5rem;
         }
 
         .section-subtitle {
           font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-          color: #a0a0a5;
+          color: #B91C23;
           max-width: 600px;
-          line-height: 1.55;
+          line-height: 1.5;
+          font-style: italic;
         }
 
         /* FILTER TABS ROW */
@@ -475,41 +507,41 @@ export default function ToolsSection() {
           align-items: center;
           gap: 0.6rem;
           padding: 0.65rem 1.1rem;
-          background: rgba(18, 18, 24, 0.94);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #FAF4D4;
+          border: 1px solid rgba(169, 0, 18, 0.2);
           border-radius: 6px;
-          color: #a0a0a5;
+          color: #CC2027;
           font-family: var(--font-mono);
           font-size: 0.78rem;
           letter-spacing: 0.06em;
-          font-weight: 500;
+          font-weight: 600;
           cursor: pointer;
           transition: all 0.2s ease;
         }
 
         .filter-btn:hover {
-          border-color: rgba(239, 255, 0, 0.4);
-          color: #ffffff;
+          border-color: #CC2027;
+          color: #CC2027;
         }
 
         .filter-btn.active {
-          background: #efff00;
-          border-color: #efff00;
-          color: #000000;
+          background: #CC2027;
+          border-color: #CC2027;
+          color: #FAF4D4;
           font-weight: 700;
         }
 
         .count-badge {
           font-size: 0.7rem;
           padding: 0.1rem 0.4rem;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(169, 0, 18, 0.1);
           border-radius: 4px;
-          color: #808085;
+          color: #CC2027;
         }
 
         .filter-btn.active .count-badge {
-          background: #000000;
-          color: #efff00;
+          background: #FAF4D4;
+          color: #CC2027;
           font-weight: 700;
         }
 
@@ -521,21 +553,21 @@ export default function ToolsSection() {
         }
 
         .tool-card {
-          background: rgba(18, 18, 24, 0.94);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          border-radius: 10px;
-          padding: 0.95rem 1.25rem;
+          position: relative;
+          background: #FAF4D4;
+          border: 1px solid rgba(204, 32, 39, 0.18);
+          border-radius: 8px;
+          padding: 1.1rem 1.25rem;
           display: flex;
           align-items: center;
-          gap: 0.85rem;
-          transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-          cursor: default;
+          gap: 0.9rem;
+          transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         .tool-card:hover {
           transform: translateY(-2px);
-          border-color: rgba(239, 255, 0, 0.45);
-          background: rgba(24, 24, 32, 0.98);
+          border-color: #CC2027;
+          box-shadow: 0 8px 24px rgba(204, 32, 39, 0.15);
         }
 
         .tool-icon {
@@ -549,8 +581,8 @@ export default function ToolsSection() {
 
         .tool-name {
           font-size: 0.95rem;
-          font-weight: 600;
-          color: #ffffff;
+          font-weight: 700;
+          color: #CC2027;
           letter-spacing: -0.01em;
           white-space: nowrap;
           overflow: hidden;
@@ -595,3 +627,4 @@ export default function ToolsSection() {
     </section>
   );
 }
+

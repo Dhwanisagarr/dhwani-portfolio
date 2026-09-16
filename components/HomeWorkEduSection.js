@@ -23,22 +23,10 @@ export default function HomeWorkEduSection() {
 
   return (
     <section id="experience" className="work-edu-section" data-color="#FAF4D4">
-      {/* Giant Tiled Background Typography Watermark */}
+      {/* Giant Whole-Word Background Typography Watermark */}
       <BackgroundWatermark word="EXPERIENCE" color="rgba(169, 0, 18, 0.065)" />
 
       <div className="work-edu-container">
-        {/* SECTION HEADER */}
-        <div className="work-edu-header">
-          <div className="eyebrow-row font-mono">
-            <span className="eyebrow-dot" />
-            <span className="eyebrow">EXPERIENCE & EDUCATION</span>
-          </div>
-          <h2 className="section-title font-mono">Work & Education</h2>
-          <p className="section-subtitle font-sans">
-            “My professional journey, roles held, and academic foundation.”
-          </p>
-        </div>
-
         <div className="work-edu-content">
           <div className="work-edu-grid">
             {/* LEFT COLUMN: WORK EXPERIENCE */}

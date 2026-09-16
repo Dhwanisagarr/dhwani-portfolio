@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import LiveClock from './LiveClock';
+import BackgroundWatermark from './BackgroundWatermark';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -42,14 +43,20 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section" data-color="#A90012">
+      {/* Giant Tiled Background Typography Watermark */}
+      <BackgroundWatermark word="CONNECT" color="rgba(250, 244, 212, 0.06)" />
+
       <div className="contact-container">
         {/* SECTION HEADER */}
         <div className="contact-header">
-          <span className="eyebrow font-mono">LET’S CONNECT</span>
+          <div className="eyebrow-row font-mono">
+            <span className="eyebrow-dot" />
+            <span className="eyebrow">GET IN TOUCH</span>
+          </div>
           <h2 className="section-title font-mono">Let’s Connect</h2>
           <p className="section-subtitle font-sans">
-            Whether you have a project in mind, an opportunity to discuss, or just want to chat about product design and engineering — feel free to reach out.
+            “Whether you have a project in mind, an opportunity to discuss, or just want to chat about product design and engineering — feel free to reach out.”
           </p>
         </div>
 
@@ -98,7 +105,7 @@ export default function ContactSection() {
                   type="text"
                   id="subject"
                   required
-                  placeholder="Product Inquiry / Collaboration"
+                  placeholder="What would you like to discuss?"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   className="form-input"
@@ -188,20 +195,24 @@ export default function ContactSection() {
       <style jsx>{`
         .contact-section {
           position: relative;
-          background-color: #060606;
           min-height: 100vh;
+          min-height: 100dvh;
           display: flex;
-          align-items: center;
+          flex-direction: column;
           justify-content: center;
-          padding: 3rem 0;
-          color: #ffffff;
+          background-color: transparent;
+          padding: 5.5rem 0;
+          color: #FAF4D4;
           width: 100%;
           box-sizing: border-box;
+          overflow: hidden;
         }
 
         .contact-container {
+          position: relative;
+          z-index: 2;
           width: 100%;
-          max-width: 1240px;
+          max-width: 1320px;
           margin: 0 auto;
           padding: 0 3.5rem;
           display: flex;
@@ -210,31 +221,48 @@ export default function ContactSection() {
         }
 
         .contact-header {
-          margin-bottom: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 2.75rem;
         }
 
-        .eyebrow {
-          font-size: 0.76rem;
-          letter-spacing: 0.18em;
-          color: #efff00;
-          margin-bottom: 0.3rem;
-          display: block;
-        }
-
-        .section-title {
-          font-size: clamp(2.1rem, 3.5vw, 2.9rem);
-          font-weight: 500;
-          color: #ffffff;
-          letter-spacing: -0.02em;
-          line-height: 1.1;
+        .eyebrow-row {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
           margin-bottom: 0.4rem;
         }
 
+        .eyebrow-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #FAF4D4;
+          display: inline-block;
+        }
+
+        .eyebrow {
+          font-size: 0.8rem;
+          letter-spacing: 0.18em;
+          color: #F2D9DA;
+          font-weight: 600;
+        }
+
+        .section-title {
+          font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+          font-weight: 600;
+          color: #FAF4D4;
+          letter-spacing: -0.02em;
+          line-height: 1.1;
+          margin-bottom: 0.5rem;
+        }
+
         .section-subtitle {
-          font-size: clamp(0.9rem, 1.05vw, 0.98rem);
-          color: #a0a0a5;
-          max-width: 580px;
-          line-height: 1.45;
+          font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+          color: #F2D9DA;
+          max-width: 620px;
+          line-height: 1.5;
+          font-style: italic;
         }
 
         .contact-grid {
@@ -245,19 +273,19 @@ export default function ContactSection() {
         }
 
         .form-card {
-          background: rgba(18, 18, 24, 0.94);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #F2D9DA;
+          border: 1px solid #E3BDBE;
           border-radius: 16px;
           padding: 1.4rem 1.6rem;
         }
 
         .card-title {
           font-size: 1.15rem;
-          font-weight: 500;
-          color: #ffffff;
+          font-weight: 700;
+          color: #CC2027;
           margin-bottom: 0.9rem;
           padding-bottom: 0.6rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          border-bottom: 1px solid #E3BDBE;
         }
 
         .status-banner {
@@ -268,15 +296,15 @@ export default function ContactSection() {
         }
 
         .status-banner.success {
-          background: rgba(239, 255, 0, 0.08);
-          border: 1px solid #efff00;
-          color: #efff00;
+          background: #FAF4D4;
+          border: 1px solid #CC2027;
+          color: #CC2027;
         }
 
         .status-banner.error {
-          background: rgba(255, 95, 86, 0.1);
-          border: 1px solid #ff5f56;
-          color: #ff5f56;
+          background: #FAF4D4;
+          border: 1px solid #CC2027;
+          color: #CC2027;
         }
 
         .contact-form {
@@ -294,25 +322,32 @@ export default function ContactSection() {
         .form-label {
           font-size: 0.68rem;
           letter-spacing: 0.1em;
-          color: #808085;
+          color: #CC2027;
+          font-weight: 700;
         }
 
         .form-input {
           width: 100%;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #FAF4D4;
+          border: 1px solid #E3BDBE;
           border-radius: 6px;
-          padding: 0.5rem 0.75rem;
-          color: #ffffff;
+          padding: 0.55rem 0.75rem;
+          color: #CC2027;
           font-family: var(--font-sans);
           font-size: 0.86rem;
           transition: all 0.2s ease;
           outline: none;
         }
 
+        .form-input::placeholder {
+          color: #B91C23;
+          opacity: 0.65;
+        }
+
         .form-input:focus {
-          border-color: #efff00;
-          background: rgba(255, 255, 255, 0.05);
+          border-color: #CC2027;
+          background: #FFFFFF;
+          box-shadow: 0 0 0 2px rgba(204, 32, 39, 0.15);
         }
 
         .textarea {
@@ -327,10 +362,10 @@ export default function ContactSection() {
           gap: 0.5rem;
           width: 100%;
           padding: 0.65rem;
-          background: #efff00;
-          border: 1px solid #efff00;
+          background: #CC2027;
+          border: 1px solid #CC2027;
           border-radius: 6px;
-          color: #000000;
+          color: #FAF4D4;
           font-weight: 700;
           font-size: 0.82rem;
           letter-spacing: 0.05em;
@@ -340,8 +375,9 @@ export default function ContactSection() {
         }
 
         .submit-btn:hover {
-          background: #ffffff;
-          border-color: #ffffff;
+          background: #D5242B;
+          border-color: #D5242B;
+          color: #FEFEFC;
           transform: translateY(-1px);
         }
 
@@ -370,7 +406,7 @@ export default function ContactSection() {
         .channels-title {
           font-size: 0.75rem;
           letter-spacing: 0.15em;
-          color: #efff00;
+          color: #F5F0DF;
           margin-bottom: 0.15rem;
         }
 
@@ -414,16 +450,16 @@ export default function ContactSection() {
           left: 0;
           width: 0%;
           height: 1px;
-          background-color: #efff00;
+          background-color: #F5F0DF;
           transition: width 0.25s ease;
         }
 
         .channel-item:hover {
-          color: #efff00;
+          color: #F5F0DF;
         }
 
         .channel-item:hover .channel-icon {
-          color: #efff00;
+          color: #F5F0DF;
           transform: translateY(-1px);
         }
 

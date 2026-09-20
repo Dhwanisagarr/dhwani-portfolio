@@ -264,7 +264,7 @@ export default function ContactSection() {
 
         .section-title {
           font-size: clamp(2.4rem, 4.2vw, 3.8rem);
-          font-weight: 600;
+          font-weight: 700;
           color: #FAF4D4;
           letter-spacing: -0.02em;
           line-height: 1.1;
@@ -276,7 +276,8 @@ export default function ContactSection() {
           color: #F2D9DA;
           max-width: 620px;
           line-height: 1.5;
-          font-style: italic;
+          font-style: normal;
+          font-weight: 400;
         }
 
         .contact-grid {

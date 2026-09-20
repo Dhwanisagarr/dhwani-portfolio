@@ -407,7 +407,7 @@ export default function ExploreMoreSection() {
 
         .section-title {
           font-size: clamp(3rem, 5vw, 4.5rem);
-          font-weight: 400;
+          font-weight: 700;
           color: #660005;
           letter-spacing: -0.02em;
           line-height: 1.05;
@@ -419,6 +419,7 @@ export default function ExploreMoreSection() {
           color: #660005;
           max-width: 620px;
           line-height: 1.55;
+          font-weight: 400;
         }
 
         .animated-cards-grid {

@@ -134,7 +134,7 @@ export default function PersonalGallerySection() {
         }
 
         .headline-line2 {
-          font-style: italic;
+          font-style: normal;
           opacity: 0.92;
         }
 

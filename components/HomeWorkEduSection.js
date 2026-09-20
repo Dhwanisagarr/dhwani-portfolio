@@ -128,7 +128,7 @@ export default function HomeWorkEduSection() {
 
         .section-title {
           font-size: clamp(2.4rem, 4.2vw, 3.8rem);
-          font-weight: 600;
+          font-weight: 700;
           color: #660005;
           letter-spacing: -0.02em;
           line-height: 1.1;
@@ -140,7 +140,8 @@ export default function HomeWorkEduSection() {
           color: #660005;
           max-width: 600px;
           line-height: 1.5;
-          font-style: italic;
+          font-style: normal;
+          font-weight: 400;
         }
 
         .work-edu-content {
@@ -162,7 +163,7 @@ export default function HomeWorkEduSection() {
 
         .col-title {
           font-size: clamp(2.6rem, 4.2vw, 4rem);
-          font-weight: 600;
+          font-weight: 700;
           letter-spacing: -0.02em;
           color: #660005;
           text-transform: none;

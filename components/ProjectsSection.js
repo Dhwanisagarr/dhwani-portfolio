@@ -37,26 +37,38 @@ export default function ProjectsSection() {
       const wrapper = wrapperRef.current;
       const track = trackRef.current;
 
-      const wrapperTop = wrapper.offsetTop;
-      const wrapperHeight = wrapper.offsetHeight - window.innerHeight;
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      // Disable JS transform translation on mobile touch viewports (<= 640px)
+      if (viewportWidth <= 640) {
+        if (track.style.transform) {
+          track.style.transform = '';
+        }
+        return;
+      }
+
+      // Calculate document-absolute top position (works accurately across Safari, Chrome, and all layout contexts)
+      const rect = wrapper.getBoundingClientRect();
+      const wrapperTop = rect.top + window.scrollY;
+      const wrapperHeight = Math.max(1, wrapper.offsetHeight - viewportHeight);
       const currentScroll = window.scrollY - wrapperTop;
 
-      // Progress normalized between 0 and 1
+      // Progress normalized strictly between 0 and 1
       const progress = Math.max(0, Math.min(1, currentScroll / wrapperHeight));
       setScrollProgress(progress);
 
-      // Start position: first card starts tucked away toward the right side (~52vw)
-      const viewportWidth = window.innerWidth;
+      // Horizontal card track translation distance calculation
       const startOffset = viewportWidth * 0.52;
       const trackWidth = track.scrollWidth;
 
-      // Total horizontal translation distance across section
+      // Total horizontal travel distance across section
       const totalTravel = startOffset + trackWidth - (viewportWidth * 0.3);
       const currentX = startOffset - (progress * totalTravel);
 
       track.style.transform = `translate3d(${currentX}px, 0, 0)`;
 
-      // Active card index
+      // Active card index tracking
       const numProjects = projectsData.length;
       const idx = Math.min(
         numProjects - 1,
@@ -71,11 +83,23 @@ export default function ProjectsSection() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
+    window.addEventListener('load', handleScroll);
+
+    if (document.fonts) {
+      document.fonts.ready.then(handleScroll);
+    }
+
+    const resizeObserver = new ResizeObserver(handleScroll);
+    if (wrapperRef.current) resizeObserver.observe(wrapperRef.current);
+    if (trackRef.current) resizeObserver.observe(trackRef.current);
+
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
+      window.removeEventListener('load', handleScroll);
+      resizeObserver.disconnect();
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -317,7 +341,7 @@ export default function ProjectsSection() {
 
         .section-title {
           font-size: clamp(2.4rem, 4.2vw, 3.8rem);
-          font-weight: 500;
+          font-weight: 700;
           color: #ffffff;
           letter-spacing: -0.02em;
           line-height: 1.1;
@@ -329,7 +353,8 @@ export default function ProjectsSection() {
           color: #a0a0a5;
           max-width: 520px;
           line-height: 1.5;
-          font-style: italic;
+          font-style: normal;
+          font-weight: 400;
         }
 
         .progress-badge {

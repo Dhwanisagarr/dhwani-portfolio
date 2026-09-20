@@ -165,11 +165,17 @@ export default function ScrollColorController() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', updateColor, { passive: true });
+    window.addEventListener('load', updateColor);
+
+    if (document.fonts) {
+      document.fonts.ready.then(updateColor);
+    }
 
     return () => {
       document.body.style.backgroundColor = originalBodyBg;
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', updateColor);
+      window.removeEventListener('load', updateColor);
     };
   }, []);
 

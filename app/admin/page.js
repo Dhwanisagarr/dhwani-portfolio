@@ -659,7 +659,7 @@ export default function AdminDashboardPage() {
         .status-badge { font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 3px; }
         .status-badge.pending { background: rgba(204, 255, 0, 0.2); color: var(--accent-neon, #ccff00); border: 1px solid var(--accent-neon, #ccff00); }
         .status-badge.approved { background: rgba(255,255,255,0.1); color: #aaa; }
-        .note-message { font-style: italic; color: #ddd; margin-bottom: 1rem; line-height: 1.5; font-size: 0.95rem; }
+        .note-message { font-style: normal; color: #ddd; margin-bottom: 1rem; line-height: 1.5; font-size: 0.95rem; }
         .note-actions { display: flex; gap: 0.75rem; }
         .btn-approve { background: var(--accent-neon, #ccff00); color: #000; font-weight: bold; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.8rem; }
         .btn-reject { background: rgba(255,68,68,0.1); border: 1px solid rgba(255,68,68,0.3); color: #ff6666; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.8rem; }

@@ -23,9 +23,6 @@ export default function HomeAboutSection() {
               <span className="heading-muted">Build.</span>
             </h2>
 
-            <p className="about-subtitle font-sans">
-              “Understanding people, solving problems, and building thoughtful digital experiences.”
-            </p>
 
             <div className="about-copy font-sans">
               <p>
@@ -153,7 +150,7 @@ export default function HomeAboutSection() {
           color: #660005;
           max-width: 540px;
           line-height: 1.5;
-          font-style: italic;
+          font-style: normal;
           margin-bottom: 1.75rem;
         }
 

@@ -1,17 +1,26 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useId } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // Custom Zland Amusement Park Loader themed in Red & Pink for Dhwani's Portfolio
 // Color palette: Background #660005 (Deep Red), Ride outlines #DF8F9C (Rose Pink), Accent Lights #FFD1DC (Light Soft Pink)
 
-export default function ZlandLoader({ durationMs = 2200 }) {
+export default function ZlandLoader({ durationMs = 2000 }) {
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(true);
   const [fading, setFading] = useState(false);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Animate progress smoothly from 0 to 1 over durationMs
+    setMounted(true);
+
+    // Guaranteed failsafe timeout: Loader will ALWAYS hide after (durationMs + 400ms) max,
+    // preventing mobile browsers (iOS Safari / Android Low Power mode) from getting stuck
+    const failsafeTimeout = setTimeout(() => {
+      setFading(true);
+      setTimeout(() => setVisible(false), 500);
+    }, durationMs + 400);
+
     const startTime = performance.now();
     let frameId;
 
@@ -23,11 +32,10 @@ export default function ZlandLoader({ durationMs = 2200 }) {
       if (p < 1) {
         frameId = requestAnimationFrame(tick);
       } else {
-        // Start fading out
         setFading(true);
         setTimeout(() => {
           setVisible(false);
-        }, 600); // 600ms fade transition
+        }, 500);
       }
     };
 
@@ -35,10 +43,12 @@ export default function ZlandLoader({ durationMs = 2200 }) {
 
     return () => {
       if (frameId) cancelAnimationFrame(frameId);
+      clearTimeout(failsafeTimeout);
     };
   }, [durationMs]);
 
-  if (!visible) return null;
+  // Don't render until client-side hydration mounts, avoiding SSR hydration lock on mobile
+  if (!mounted || !visible) return null;
 
   const bg = '#660005'; // Deep Red
   const rideColor = '#DF8F9C'; // Rose Pink
@@ -49,7 +59,12 @@ export default function ZlandLoader({ durationMs = 2200 }) {
       className={`zland-loader-overlay ${fading ? 'fading' : ''}`}
       style={{
         position: 'fixed',
-        inset: 0,
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: '100vw',
+        height: '100dvh',
         zIndex: 999999,
         background: bg,
         display: 'flex',
@@ -68,8 +83,8 @@ export default function ZlandLoader({ durationMs = 2200 }) {
 
       <style jsx global>{`
         .zland-loader-overlay {
-          width: 100%;
-          height: 100%;
+          width: 100vw;
+          height: 100dvh;
         }
 
         .zland-scene-wrapper {
@@ -226,14 +241,20 @@ function ZL_DropTowerRide_MovingGondola({ duration, lightsOn, lightColor, bg, st
     let lastTime = null;
 
     const tick = (time) => {
-      if (lastTime !== null) {
-        const dt = Math.max(0, Math.min((time - lastTime) / 1000, 0.05));
-        phaseRef.current = (phaseRef.current + dt / duration) % 1;
+      try {
+        if (lastTime !== null) {
+          const dt = Math.max(0, Math.min((time - lastTime) / 1000, 0.05));
+          phaseRef.current = (phaseRef.current + dt / duration) % 1;
+        }
+        lastTime = time;
+        const y = ZL_DropTowerRide_gondolaY(phaseRef.current);
+        if (carriage) {
+          carriage.setAttribute('transform', `translate(${ZL_DropTowerRide_CX} ${y.toFixed(3)})`);
+        }
+        frame = requestAnimationFrame(tick);
+      } catch (err) {
+        // Prevent uncaught errors from halting thread
       }
-      lastTime = time;
-      const y = ZL_DropTowerRide_gondolaY(phaseRef.current);
-      carriage.setAttribute('transform', `translate(${ZL_DropTowerRide_CX} ${y.toFixed(3)})`);
-      frame = requestAnimationFrame(tick);
     };
 
     frame = requestAnimationFrame(tick);
@@ -409,8 +430,7 @@ const ZL_CarouselRide_CABINS = [{ delay: 0 }, { delay: -0.25 }, { delay: -0.5 },
 const ZL_CarouselRide_LIGHTS = [{ x: 59, y: 91 }, { x: 74, y: 87 }, { x: 89, y: 84 }, { x: 105, y: 82 }, { x: 120, y: 81 }, { x: 135, y: 82 }, { x: 151, y: 84 }, { x: 166, y: 87 }, { x: 181, y: 91 }];
 
 function ZLCarousel({ motionEnabled = true, color = '#DF8F9C', lightColor = '#FFD1DC', bg = '#660005', strokeWidth = 5, lights = 'On' }) {
-  const rawId = useId();
-  const clipId = 'zll-carousel-' + rawId.replace(/:/g, '');
+  const clipId = 'zll-carousel-static-clip';
   const lightsOn = lights === 'On';
   const duration = 10;
 

@@ -15,6 +15,7 @@ export default function CursorDotTrail({
   transitionSpeed = 0.18
 }) {
   const [mounted, setMounted] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
   const canvasRef = useRef(null);
   const pointsRef = useRef([]);
   const ballRef = useRef({ x: 0, y: 0 });
@@ -32,15 +33,14 @@ export default function CursorDotTrail({
 
   useEffect(() => {
     setMounted(true);
+    if (typeof window !== 'undefined') {
+      const isCoarse = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
+      setIsTouch(isCoarse);
+    }
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
-
-    // Check if coarse pointer (touch device)
-    if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
-      return;
-    }
+    if (!mounted || isTouch) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -199,9 +199,9 @@ export default function CursorDotTrail({
       window.removeEventListener('resize', resize);
       if (animRef.current) cancelAnimationFrame(animRef.current);
     };
-  }, [mounted, color, colorInverted, size, hoverSize, borderWidth, spring, friction, trailDuration, transitionSpeed]);
+  }, [mounted, isTouch, color, colorInverted, size, hoverSize, borderWidth, spring, friction, trailDuration, transitionSpeed]);
 
-  if (!mounted) return null;
+  if (!mounted || isTouch) return null;
 
   return createPortal(
     <canvas

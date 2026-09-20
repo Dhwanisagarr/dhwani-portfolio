@@ -66,7 +66,10 @@ export default function ToolMarquee() {
         }
 
         .tool-marquee-track {
-          display: flex;
+          display: flex !important;
+          flex-direction: row !important;
+          flex-wrap: nowrap !important;
+          white-space: nowrap !important;
           align-items: center;
           gap: 1rem;
           width: max-content;
@@ -118,6 +121,12 @@ export default function ToolMarquee() {
           }
           100% {
             transform: translateX(-50%);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .tool-marquee-wrapper {
+            display: none !important;
           }
         }
 

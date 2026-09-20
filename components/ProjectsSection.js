@@ -528,9 +528,9 @@ export default function ProjectsSection() {
 
         @media (max-width: 900px) {
           .project-card {
-            width: 480px;
-            min-width: 480px;
-            max-width: 480px;
+            width: calc(100vw - 3rem);
+            min-width: 0 !important;
+            max-width: 520px;
             height: 320px;
           }
 
@@ -551,7 +551,7 @@ export default function ProjectsSection() {
           .projects-sticky-pin {
             position: relative;
             height: auto;
-            overflow: visible;
+            overflow: hidden;
             padding: 4rem 1.5rem;
           }
 
@@ -565,21 +565,33 @@ export default function ProjectsSection() {
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             padding: 1rem 0;
+            width: 100%;
+            box-sizing: border-box;
           }
 
           .projects-track {
             transform: none !important;
+            max-width: 100%;
           }
 
           .project-card {
-            width: 86vw;
-            min-width: 86vw;
+            width: calc(100vw - 3rem) !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
             height: 290px;
             scroll-snap-align: center;
+            box-sizing: border-box;
           }
 
           .card-media-screen {
             height: 232px;
+            width: 100%;
+          }
+
+          .card-cover-img {
+            max-width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
           }
 
           .scroll-hint {

@@ -8,25 +8,45 @@ export default function LiveClock() {
 
   useEffect(() => {
     const updateTime = () => {
-      const now = new Date();
+      try {
+        const now = new Date();
+        let tStr = '';
+        let dStr = '';
 
-      const optionsTime = {
-        timeZone: 'Asia/Kolkata',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true
-      };
+        try {
+          tStr = now.toLocaleTimeString('en-US', {
+            timeZone: 'Asia/Kolkata',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+          });
+          dStr = now.toLocaleDateString('en-US', {
+            timeZone: 'Asia/Kolkata',
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+          });
+        } catch (tzErr) {
+          // Fallback to local browser timezone if Asia/Kolkata is unsupported on mobile browser engine
+          tStr = now.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+          });
+          dStr = now.toLocaleDateString('en-US', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+          });
+        }
 
-      const optionsDate = {
-        timeZone: 'Asia/Kolkata',
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric'
-      };
-
-      setTimeString(now.toLocaleTimeString('en-US', optionsTime));
-      setDateString(now.toLocaleDateString('en-US', optionsDate));
+        if (tStr) setTimeString(tStr);
+        if (dStr) setDateString(dStr);
+      } catch (err) {
+        console.error('LiveClock update error:', err);
+      }
     };
 
     updateTime();

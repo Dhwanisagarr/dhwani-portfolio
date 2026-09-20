@@ -72,8 +72,8 @@ export default function BackgroundWatermark({
             paddingTop: cfg.paddingTop,
           }}
         >
-          {/* Repeat text string (4 copies per row) for clean, spacious wallpaper look without collision */}
-          {[...Array(4)].map((_, cIdx) => (
+          {/* Repeat text string (8 copies per row for smooth marquee looping on mobile) */}
+          {[...Array(8)].map((_, cIdx) => (
             <span key={cIdx} className="scatter-word">
               {textString}
             </span>
@@ -92,17 +92,19 @@ export default function BackgroundWatermark({
           pointer-events: none;
           user-select: none;
           z-index: 1;
-          overflow: hidden;
+          overflow: hidden !important;
+          white-space: nowrap !important;
           padding: 3rem 0;
           box-sizing: border-box;
           width: 100%;
+          max-width: 100vw;
         }
 
         .scatter-row {
           display: flex;
           flex-direction: row;
           align-items: center;
-          white-space: nowrap;
+          white-space: nowrap !important;
           width: max-content;
           will-change: transform;
         }
@@ -114,11 +116,41 @@ export default function BackgroundWatermark({
           font-size: clamp(3.2rem, 6.5vw, 7.5rem);
           flex-shrink: 0;
           opacity: 0.85;
+          white-space: nowrap !important;
         }
 
         @media (max-width: 768px) {
+          .bg-typography-scatter {
+            padding: 0.5rem 0 !important;
+            height: 3.5rem !important;
+            inset: 1.5rem 0 auto 0 !important;
+            justify-content: center !important;
+          }
+
+          .scatter-row:nth-child(n+2) {
+            display: none !important;
+          }
+
+          .scatter-row:first-child {
+            transform: none !important;
+            padding-top: 0 !important;
+            gap: 2rem !important;
+            animation: watermarkMarqueeScroll 25s linear infinite !important;
+          }
+
           .scatter-word {
-            font-size: clamp(2.5rem, 10vw, 4.5rem);
+            font-size: 1.6rem !important;
+            letter-spacing: 0.08em !important;
+            opacity: 0.45 !important;
+          }
+
+          @keyframes watermarkMarqueeScroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
           }
         }
       `}</style>

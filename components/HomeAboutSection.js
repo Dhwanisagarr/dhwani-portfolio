@@ -289,6 +289,12 @@ export default function HomeAboutSection() {
           .about-container {
             padding: 0 1.5rem;
           }
+          .photo-wrapper {
+            max-width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 4 / 3;
+            max-height: 360px;
+          }
           .about-ctas {
             flex-direction: column;
             align-items: stretch;

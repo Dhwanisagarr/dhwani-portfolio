@@ -43,9 +43,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="contact-section" data-color="#A90012">
+    <section id="contact" className="contact-section" data-color="#660005">
       {/* Giant Tiled Background Typography Watermark */}
-      <BackgroundWatermark word="CONNECT" color="rgba(250, 244, 212, 0.06)" />
+      <BackgroundWatermark word="CONTACT" color="rgba(102, 0, 5, 0.095)" />
 
       <div className="contact-container">
         {/* SECTION HEADER */}
@@ -79,7 +79,7 @@ export default function ContactSection() {
                   type="text"
                   id="name"
                   required
-                  placeholder="e.g. Alex Rivers"
+                  placeholder="e.g. Dhwani"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="form-input"
@@ -92,7 +92,7 @@ export default function ContactSection() {
                   type="email"
                   id="email"
                   required
-                  placeholder="alex@example.com"
+                  placeholder="dhwani@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="form-input"
@@ -141,7 +141,7 @@ export default function ContactSection() {
             <div className="channels-section">
               <h4 className="channels-title font-mono">DIRECT CHANNELS</h4>
               <div className="channels-row">
-                <a href="mailto:dhwanisagar.work@gmail.com" className="channel-item">
+                <a href="mailto:dhwanisagar17@gmail.com" className="channel-item">
                   <svg className="channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
@@ -150,7 +150,7 @@ export default function ContactSection() {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/dhwanisagar"
+                  href="https://www.linkedin.com/in/dhwanisagar/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="channel-item"
@@ -162,7 +162,21 @@ export default function ContactSection() {
                 </a>
 
                 <a
-                  href="https://github.com/dhwanisagar"
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="channel-item"
+                >
+                  <svg className="channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  <span className="channel-name font-sans">Resume</span>
+                </a>
+
+                <a
+                  href="https://github.com/Dhwanisagarr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="channel-item"
@@ -282,7 +296,7 @@ export default function ContactSection() {
         .card-title {
           font-size: 1.15rem;
           font-weight: 700;
-          color: #CC2027;
+          color: #660005;
           margin-bottom: 0.9rem;
           padding-bottom: 0.6rem;
           border-bottom: 1px solid #E3BDBE;
@@ -297,14 +311,14 @@ export default function ContactSection() {
 
         .status-banner.success {
           background: #FAF4D4;
-          border: 1px solid #CC2027;
-          color: #CC2027;
+          border: 1px solid #660005;
+          color: #660005;
         }
 
         .status-banner.error {
           background: #FAF4D4;
-          border: 1px solid #CC2027;
-          color: #CC2027;
+          border: 1px solid #660005;
+          color: #660005;
         }
 
         .contact-form {
@@ -322,7 +336,7 @@ export default function ContactSection() {
         .form-label {
           font-size: 0.68rem;
           letter-spacing: 0.1em;
-          color: #CC2027;
+          color: #660005;
           font-weight: 700;
         }
 
@@ -332,7 +346,7 @@ export default function ContactSection() {
           border: 1px solid #E3BDBE;
           border-radius: 6px;
           padding: 0.55rem 0.75rem;
-          color: #CC2027;
+          color: #660005;
           font-family: var(--font-sans);
           font-size: 0.86rem;
           transition: all 0.2s ease;
@@ -340,14 +354,14 @@ export default function ContactSection() {
         }
 
         .form-input::placeholder {
-          color: #B91C23;
+          color: #660005;
           opacity: 0.65;
         }
 
         .form-input:focus {
-          border-color: #CC2027;
+          border-color: #660005;
           background: #FFFFFF;
-          box-shadow: 0 0 0 2px rgba(204, 32, 39, 0.15);
+          box-shadow: 0 0 0 2px rgba(102, 0, 5, 0.15);
         }
 
         .textarea {
@@ -362,8 +376,8 @@ export default function ContactSection() {
           gap: 0.5rem;
           width: 100%;
           padding: 0.65rem;
-          background: #CC2027;
-          border: 1px solid #CC2027;
+          background: #660005;
+          border: 1px solid #660005;
           border-radius: 6px;
           color: #FAF4D4;
           font-weight: 700;
@@ -375,8 +389,8 @@ export default function ContactSection() {
         }
 
         .submit-btn:hover {
-          background: #D5242B;
-          border-color: #D5242B;
+          background: #660005;
+          border-color: #660005;
           color: #FEFEFC;
           transform: translateY(-1px);
         }

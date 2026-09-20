@@ -1,6 +1,7 @@
+import ScrollColorController from '../components/ScrollColorController';
 import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import WorkEduSection from '../components/WorkEduSection';
+import HomeAboutSection from '../components/HomeAboutSection';
+import HomeWorkEduSection from '../components/HomeWorkEduSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ToolsSection from '../components/ToolsSection';
 import ContactSection from '../components/ContactSection';
@@ -10,9 +11,10 @@ import Footer from '../components/Footer';
 export default function Home() {
   return (
     <>
+      <ScrollColorController />
       <HeroSection />
-      <AboutSection />
-      <WorkEduSection />
+      <HomeAboutSection />
+      <HomeWorkEduSection />
       <ProjectsSection />
       <ToolsSection />
       <ContactSection />

@@ -7,7 +7,7 @@ export default function HomeAboutSection() {
   return (
     <section id="about" className="about-section" data-color="#F2D9DA">
       {/* Giant Tiled Background Typography Watermark */}
-      <BackgroundWatermark word="ABOUT" color="rgba(185, 28, 35, 0.065)" />
+      <BackgroundWatermark word="ABOUT" color="rgba(102, 0, 5, 0.065)" />
 
       <div className="about-container">
         <div className="about-grid">
@@ -44,7 +44,8 @@ export default function HomeAboutSection() {
             <div className="about-ctas">
               <a
                 href="/resume.pdf"
-                download="Dhwani_Sagar_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-cta btn-cta-yellow font-sans"
               >
                 <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FAF4D4" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -88,7 +89,7 @@ export default function HomeAboutSection() {
           justify-content: center;
           background-color: transparent;
           padding: 5.5rem 0;
-          color: #CC2027;
+          color: #660005;
           width: 100%;
           box-sizing: border-box;
           overflow: hidden;
@@ -127,14 +128,14 @@ export default function HomeAboutSection() {
           width: 7px;
           height: 7px;
           border-radius: 50%;
-          background-color: #CC2027;
+          background-color: #660005;
           display: inline-block;
         }
 
         .eyebrow {
           font-size: 0.8rem;
           letter-spacing: 0.18em;
-          color: #CC2027;
+          color: #660005;
           font-weight: 600;
         }
 
@@ -149,7 +150,7 @@ export default function HomeAboutSection() {
 
         .about-subtitle {
           font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-          color: #B91C23;
+          color: #660005;
           max-width: 540px;
           line-height: 1.5;
           font-style: italic;
@@ -157,12 +158,12 @@ export default function HomeAboutSection() {
         }
 
         .heading-bright {
-          color: #CC2027;
+          color: #660005;
           font-weight: 700;
         }
 
         .heading-muted {
-          color: #D5242B;
+          color: #660005;
           font-weight: 500;
           opacity: 0.85;
         }
@@ -173,7 +174,7 @@ export default function HomeAboutSection() {
           gap: 1.35rem;
           font-size: clamp(0.95rem, 1.1vw, 1.05rem);
           line-height: 1.65;
-          color: #B91C23;
+          color: #660005;
         }
 
         .about-copy p {
@@ -212,13 +213,13 @@ export default function HomeAboutSection() {
         }
 
         .btn-cta-yellow {
-          background-color: #CC2027 !important;
+          background-color: #660005 !important;
           color: #FAF4D4 !important;
-          border: 1px solid #CC2027 !important;
+          border: 1px solid #660005 !important;
         }
 
         .btn-cta-yellow:hover, .btn-cta-yellow:focus, .btn-cta-yellow:active, .btn-cta-yellow:visited {
-          background-color: #D5242B !important;
+          background-color: #660005 !important;
           color: #FAF4D4 !important;
           text-decoration: none !important;
           transform: translateY(-2px);
@@ -226,14 +227,14 @@ export default function HomeAboutSection() {
 
         .btn-cta-charcoal {
           background-color: #FAF4D4 !important;
-          color: #CC2027 !important;
-          border: 1px solid #CC2027 !important;
+          color: #660005 !important;
+          border: 1px solid #660005 !important;
         }
 
         .btn-cta-charcoal:hover, .btn-cta-charcoal:focus, .btn-cta-charcoal:active, .btn-cta-charcoal:visited {
           background-color: #E3BDBE !important;
-          color: #CC2027 !important;
-          border-color: #CC2027 !important;
+          color: #660005 !important;
+          border-color: #660005 !important;
           text-decoration: none !important;
           transform: translateY(-2px);
         }

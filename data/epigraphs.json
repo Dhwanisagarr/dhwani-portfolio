@@ -1,26 +1,93 @@
 [
   {
     "id": "ep-1",
-    "quote": "Simplicity is about subtracting the obvious and adding the meaningful.",
-    "author": "John Maeda",
-    "source": "The Laws of Simplicity"
+    "quote": "One day you will wake up, and there won't be any more time to do the things you have always wanted to do.",
+    "author": "Paulo Coelho",
+    "source": "attribution widely cited, unverified",
+    "type": "LITERATURE"
   },
   {
     "id": "ep-2",
-    "quote": "Design is not just what it looks like and feels like. Design is how it works.",
-    "author": "Steve Jobs",
-    "source": "New York Times Magazine (2003)"
+    "quote": "Don't be hard on your parents because it's also their first time living the life. They are also humans. They can make mistakes too.",
+    "author": "Anonymous",
+    "source": "",
+    "type": "WISDOM"
   },
   {
     "id": "ep-3",
-    "quote": "Recognizing the need is the primary condition for design.",
-    "author": "Charles Eames",
-    "source": "Design Q&A"
+    "quote": "If you spend your time chasing butterflies, they will fly away, but if you spend time making a beautiful garden, the butterfly will come.",
+    "author": "Mário Quintana",
+    "source": "",
+    "type": "POETRY"
   },
   {
     "id": "ep-4",
-    "quote": "Details are not the details. They make the design.",
-    "author": "Charles Eames",
-    "source": "Architecture & Craft"
+    "quote": "A comfort zone is a beautiful place, but nothing ever grows there.",
+    "author": "Anonymous",
+    "source": "",
+    "type": "WISDOM"
+  },
+  {
+    "id": "ep-5",
+    "quote": "The biggest risk is not taking any risk. In a world that is changing really quickly, the only strategy that is guaranteed to fail is not taking risk.",
+    "author": "Mark Zuckerberg",
+    "source": "quoting Peter Thiel",
+    "type": "STRATEGY"
+  },
+  {
+    "id": "ep-6",
+    "quote": "We must all suffer from one of two pains: the pain of discipline or the pain of regret.",
+    "author": "Jim Rohn",
+    "source": "",
+    "type": "DISCIPLINE"
+  },
+  {
+    "id": "ep-7",
+    "quote": "You will never change your life until you change something you do daily. The secret of your success is found in you, your daily routine.",
+    "author": "Mike Murdock",
+    "source": "",
+    "type": "HABITS"
+  },
+  {
+    "id": "ep-8",
+    "quote": "If you are persistent, you will get it. If you are consistent, you will keep it.",
+    "author": "Harvey Mackay",
+    "source": "Success Is a Journey",
+    "type": "PERSISTENCE"
+  },
+  {
+    "id": "ep-9",
+    "quote": "It's only after we've lost everything that we're free to do anything.",
+    "author": "Chuck Palahniuk",
+    "source": "Fight Club",
+    "type": "LITERATURE"
+  },
+  {
+    "id": "ep-10",
+    "quote": "We don't see things as they are. We see them as we are.",
+    "author": "Anaïs Nin",
+    "source": "Seduction of the Minotaur",
+    "type": "PHILOSOPHY"
+  },
+  {
+    "id": "ep-11",
+    "quote": "If a man does not know what harbor he is making for, no wind is favorable.",
+    "author": "Seneca",
+    "source": "Moral Letters to Lucilius (Letter 71)",
+    "type": "PHILOSOPHY"
+  },
+  {
+    "id": "ep-12",
+    "quote": "Everything works if you work. Everything stops if you stop.",
+    "author": "Anonymous",
+    "source": "",
+    "type": "ACTION"
+  },
+  {
+    "id": "ep-13",
+    "quote": "We romanticize the stars, but forget the dark is what made them visible.",
+    "author": "Anonymous",
+    "source": "",
+    "type": "PERSPECTIVE"
   }
 ]

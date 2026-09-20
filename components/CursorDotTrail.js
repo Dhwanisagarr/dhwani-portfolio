@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 export default function CursorDotTrail({
-  color = '#efff00',
-  colorInverted = '#ffffff',
+  color = '#F5F0DF',
+  colorInverted = '#660005',
   size = 10,
   hoverSize = 38,
   borderWidth = 2,
@@ -220,7 +220,7 @@ export default function CursorDotTrail({
 }
 
 function hexToRgba(color, alpha) {
-  if (!color) return `rgba(239, 255, 0, ${alpha})`;
+  if (!color) return `rgba(245, 240, 223, ${alpha})`;
   if (color.startsWith('rgba')) {
     return color.replace(/rgba\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*[^)]+\)/, (_, r, g, b) => `rgba(${r},${g},${b},${alpha})`);
   }
@@ -241,5 +241,5 @@ function hexToRgba(color, alpha) {
     }
     return `rgba(${r},${g},${b},${alpha})`;
   }
-  return `rgba(239, 255, 0, ${alpha})`;
+  return `rgba(245, 240, 223, ${alpha})`;
 }

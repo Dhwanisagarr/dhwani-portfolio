@@ -1,17 +1,28 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { useProjectModal } from '../context/ProjectModalContext';
 import projectsData from '../data/projects.json';
+import BackgroundWatermark from './BackgroundWatermark';
 
 const projectAccents = [
-  '#efff00', // Project 1: Neon Yellow
-  '#00e5ff', // Project 2: Electric Cyan
-  '#ff007f', // Project 3: Vivid Magenta
-  '#00ff9d', // Project 4: Emerald Green
+  '#E3BDBE', // Light Pink
+  '#FAF4D4', // Light Goldenrod Yellow
+  '#F2D9DA', // Soft Pink
+  '#FAF4D4', // Light Goldenrod Yellow
+];
+
+// Varied preset position offsets for faded card header watermarks
+const watermarkOffsets = [
+  { transform: 'translate(0px, 0px)' },          // Card 0 (SignalDesk): Top-left flush
+  { transform: 'translate(36px, 12px)' },        // Card 1 (DAHLIA): Shifted right & down
+  { transform: 'translate(75px, -2px)' },        // Card 2 (StreakUp): Shifted right towards top-center
+  { transform: 'translate(14px, 20px)' },        // Card 3 (CP): Shifted down
+  { transform: 'translate(48px, 6px)' },         // Card 4 (Together): Shifted mid-right
 ];
 
 export default function ProjectsSection() {
+  const { openProject } = useProjectModal();
   const wrapperRef = useRef(null);
   const trackRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -72,17 +83,13 @@ export default function ProjectsSection() {
   const currentAccent = projectAccents[activeProjectIndex % projectAccents.length];
 
   return (
-    <section id="projects" ref={wrapperRef} className="projects-scroll-wrapper">
+    <section id="projects" ref={wrapperRef} className="projects-scroll-wrapper" data-color="#660005">
       <div
         className="projects-sticky-pin"
         style={{ '--project-accent': currentAccent }}
       >
-        {/* SINGLE WORD "PROJECT" OVERSIZED BACKGROUND TYPOGRAPHY */}
-        <div className="bg-typography-canvas font-mono" aria-hidden="true">
-          <div className="typo-row">PROJECT PROJECT PROJECT</div>
-          <div className="typo-row">PROJECT PROJECT PROJECT</div>
-          <div className="typo-row">PROJECT PROJECT PROJECT</div>
-        </div>
+        {/* Whole-Word Shared Background Typography Watermark */}
+        <BackgroundWatermark word="PROJECT" color="rgba(255, 255, 255, 0.065)" />
 
         {/* Ambient radial glow spot reacting to active project color */}
         <div className="bg-ambient-glow" aria-hidden="true" />
@@ -115,41 +122,81 @@ export default function ProjectsSection() {
         {/* Floating Horizontal Project Cards Track */}
         <div className="track-overflow-mask">
           <div ref={trackRef} className="projects-track">
-            {projectsData.map((project, idx) => (
-              <div
-                key={project.id}
-                className={`project-card ${activeProjectIndex === idx ? 'card-active' : ''}`}
-                style={{
-                  '--card-accent': projectAccents[idx % projectAccents.length]
-                }}
-              >
-                <Link href={`/projects/${project.slug}`} className="card-link-wrapper">
-                  {/* Screen Image Preview Canvas */}
-                  <div className="card-media-screen">
-                    <div className="screen-preview-bg">
-                      <span className="screen-watermark font-mono">
-                        {project.slug.split('-')[0].toUpperCase()}
-                      </span>
-                      <div className="screen-content-overlay">
-                        <span className="screen-role font-mono">{project.role}</span>
-                        <h3 className="screen-title font-mono">{project.title}</h3>
+            {projectsData.map((project, idx) => {
+              const isNotionProject = project.slug === 'product-thinking-teardowns';
+
+              return (
+                <div
+                  key={project.id}
+                  className={`project-card ${activeProjectIndex === idx ? 'card-active' : ''}`}
+                  onClick={() => {
+                    if (isNotionProject && project.liveUrl) {
+                      window.open(project.liveUrl, '_blank');
+                    } else {
+                      openProject(project);
+                    }
+                  }}
+                  style={{
+                    cursor: 'pointer',
+                    '--card-accent': projectAccents[idx % projectAccents.length]
+                  }}
+                >
+                  <div className="card-link-wrapper">
+                    {/* Clean Media Screen displaying project cover picture */}
+                    <div className="card-media-screen">
+                      <img
+                        src={project.image || `/images/projects/${project.slug}.png`}
+                        alt={project.title}
+                        className="card-cover-img"
+                      />
+                    </div>
+
+                    {/* Clean Bottom Information Strip matching reference */}
+                    <div className="card-bottom-strip font-mono">
+                      <div className="strip-left">
+                        <span className="strip-logo-mark">
+                          {project.slug === 'product-thinking-teardowns' && '💡'}
+                          {project.slug === 'signaldesk' && '⚡'}
+                          {project.slug === 'dahlia' && '🌸'}
+                          {project.slug === 'streakup' && '📈'}
+                          {project.slug === 'cp-speech-pain' && '🧠'}
+                          {project.slug === 'together' && '✨'}
+                          {!['product-thinking-teardowns', 'signaldesk', 'dahlia', 'streakup', 'cp-speech-pain', 'together'].includes(project.slug) && '🚀'}
+                        </span>
+                        <span className="strip-title">{project.title.split('—')[0].trim()}</span>
+                      </div>
+                      <div className="strip-right font-mono">
+                        {isNotionProject && project.liveUrl ? (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="strip-status-badge live"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            NOTION DOC ↗
+                          </a>
+                        ) : project.liveUrl ? (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="strip-status-badge live"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            LIVE APP ↗
+                          </a>
+                        ) : (
+                          <span className="strip-status-badge case-study">
+                            CASE STUDY
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
-
-                  {/* Compact Bottom White Information Strip */}
-                  <div className="card-bottom-strip font-mono">
-                    <div className="strip-left">
-                      <span className="strip-icon">0{idx + 1}</span>
-                      <span className="strip-title">{project.title.split('—')[0].trim()}</span>
-                    </div>
-                    <div className="strip-right font-mono">
-                      <span className="strip-metric">{project.metrics.split(',')[0]}</span>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -164,7 +211,7 @@ export default function ProjectsSection() {
         .projects-scroll-wrapper {
           position: relative;
           height: 380vh;
-          background-color: #060606;
+          background-color: transparent;
         }
 
         .projects-sticky-pin {
@@ -179,8 +226,8 @@ export default function ProjectsSection() {
           justify-content: space-between;
           padding: 3.5rem 0 2.5rem 0;
           box-sizing: border-box;
-          background-color: #060606;
-          color: #ffffff;
+          background-color: transparent;
+          color: #F7F1E3;
           transition: background-color 0.6s ease;
         }
 
@@ -340,26 +387,26 @@ export default function ProjectsSection() {
 
         /* Refined Card Design matching Reference Screenshot */
         .project-card {
-          width: 380px;
-          min-width: 380px;
-          max-width: 380px;
-          height: 250px;
+          width: 580px;
+          min-width: 580px;
+          max-width: 580px;
+          height: 370px;
           flex-shrink: 0;
           background: #ffffff;
-          border-radius: 20px;
-          padding: 4px;
+          border-radius: 28px;
+          padding: 6px;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75);
-          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8);
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 1.5px solid rgba(255, 255, 255, 0.4);
         }
 
         .project-card:hover,
         .project-card.card-active {
-          transform: translateY(-6px) scale(1.02);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.2);
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 32px 75px rgba(0, 0, 0, 0.95), 0 0 30px rgba(255, 255, 255, 0.25);
           border-color: #ffffff;
         }
 
@@ -374,60 +421,28 @@ export default function ProjectsSection() {
 
         .card-media-screen {
           width: 100%;
-          height: 202px;
-          border-radius: 16px 16px 0 0;
+          height: 308px;
+          border-radius: 22px 22px 0 0;
           overflow: hidden;
           position: relative;
           background: #0d0d12;
         }
 
-        .screen-preview-bg {
+        .card-cover-img {
+          position: absolute;
+          inset: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, #181824 0%, #0c0c14 100%);
-          padding: 1.15rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          position: relative;
-        }
-
-        .screen-watermark {
-          font-size: 2.8rem;
-          font-weight: 900;
-          color: rgba(255, 255, 255, 0.04);
-          letter-spacing: 0.05em;
-          line-height: 1;
-        }
-
-        .screen-content-overlay {
-          display: flex;
-          flex-direction: column;
-          gap: 0.2rem;
-          z-index: 2;
-        }
-
-        .screen-role {
-          font-size: 0.68rem;
-          color: var(--card-accent);
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          transition: color 0.6s ease;
-        }
-
-        .screen-title {
-          font-size: 1.15rem;
-          font-weight: 500;
-          color: #ffffff;
-          line-height: 1.25;
+          object-fit: cover;
+          object-position: top center;
         }
 
         /* Bottom White Strip */
         .card-bottom-strip {
-          height: 44px;
+          height: 50px;
           background: #ffffff;
-          border-radius: 0 0 16px 16px;
-          padding: 0 0.85rem;
+          border-radius: 0 0 22px 22px;
+          padding: 0 1.25rem;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -437,44 +452,60 @@ export default function ProjectsSection() {
         .strip-left {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 0.65rem;
           overflow: hidden;
         }
 
-        .strip-icon {
-          font-size: 0.72rem;
-          font-weight: 700;
-          color: #000000;
-          letter-spacing: 0.05em;
+        .strip-logo-mark {
+          font-size: 0.95rem;
+          line-height: 1;
         }
 
         .strip-title {
-          font-size: 0.8rem;
-          font-weight: 700;
+          font-size: 0.88rem;
+          font-weight: 800;
           color: #000000;
-          letter-spacing: -0.01em;
+          letter-spacing: 0.04em;
           text-transform: uppercase;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          max-width: 200px;
+          max-width: 340px;
         }
 
         .strip-right {
           display: flex;
           align-items: center;
           flex-shrink: 0;
+          gap: 0.5rem;
         }
 
-        .strip-metric {
+        .strip-status-badge {
           font-size: 0.72rem;
-          font-weight: 700;
-          color: #000000;
-          background: var(--card-accent);
-          padding: 0.2rem 0.5rem;
-          border-radius: 4px;
-          letter-spacing: 0.02em;
-          transition: background-color 0.6s ease;
+          font-weight: 800;
+          padding: 0.3rem 0.85rem;
+          border-radius: 100px;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .strip-status-badge.live {
+          color: #660005;
+          background: #DF8F9C;
+          border: 1px solid rgba(102, 0, 5, 0.2);
+          text-decoration: none;
+        }
+
+        .strip-status-badge.live:hover {
+          transform: translateY(-1px);
+          background: #660005;
+          color: #FAF4D4;
+        }
+
+        .strip-status-badge.case-study {
+          color: #FAF4D4;
+          background: #660005;
         }
 
         .scroll-hint {
@@ -497,9 +528,14 @@ export default function ProjectsSection() {
 
         @media (max-width: 900px) {
           .project-card {
-            width: 340px;
-            min-width: 340px;
-            max-width: 340px;
+            width: 480px;
+            min-width: 480px;
+            max-width: 480px;
+            height: 320px;
+          }
+
+          .card-media-screen {
+            height: 260px;
           }
 
           .projects-header-container {
@@ -536,9 +572,14 @@ export default function ProjectsSection() {
           }
 
           .project-card {
-            width: 82vw;
-            min-width: 82vw;
+            width: 86vw;
+            min-width: 86vw;
+            height: 290px;
             scroll-snap-align: center;
+          }
+
+          .card-media-screen {
+            height: 232px;
           }
 
           .scroll-hint {

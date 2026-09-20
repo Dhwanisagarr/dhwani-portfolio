@@ -5,8 +5,8 @@ import { useState, useEffect, useRef } from 'react';
 export default function ThemeString({
   stringLength = 90,
   threshold = 60,
-  lineColorDark = '#efff00',
-  lineColorLight = '#111111'
+  lineColorDark = '#F7F1E3',
+  lineColorLight = '#660005'
 }) {
   const [isDark, setIsDark] = useState(true);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
@@ -163,8 +163,8 @@ export default function ThemeString({
         <div className="knob-icon">
           {isDark ? (
             /* Sun Icon when in Dark Mode (toggle to Light) */
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="5" fill="#000000" />
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#660005" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="5" fill="#660005" />
               <line x1="12" y1="1" x2="12" y2="3" />
               <line x1="12" y1="21" x2="12" y2="23" />
               <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
@@ -176,8 +176,8 @@ export default function ThemeString({
             </svg>
           ) : (
             /* Moon Icon when in Light Mode (toggle to Dark) */
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#ffffff" />
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7F1E3" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#F7F1E3" />
             </svg>
           )}
         </div>
@@ -212,8 +212,8 @@ export default function ThemeString({
           width: 35px;
           height: 35px;
           border-radius: 50%;
-          background: ${isDark ? '#efff00' : '#111111'};
-          border: 2px solid ${isDark ? '#efff00' : '#111111'};
+          background: ${isDark ? '#F7F1E3' : '#660005'};
+          border: 2px solid ${isDark ? '#F7F1E3' : '#660005'};
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
           display: flex;
           align-items: center;
@@ -226,7 +226,7 @@ export default function ThemeString({
 
         .string-knob.dragging {
           cursor: grabbing;
-          box-shadow: 0 8px 25px rgba(239, 255, 0, 0.45);
+          box-shadow: 0 8px 25px rgba(243, 198, 204, 0.45);
         }
 
         .string-knob:hover {

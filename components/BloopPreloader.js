@@ -71,7 +71,7 @@ export default function BloopPreloader({
           >
             <path
               d="M 11.605 1198.824 C 117.81 2048.365 715.599 1194.746 966.065 1533.064 C 1216.53 1871.381 1493.524 1794.135 1781.626 1451.023 C 2069.727 1107.911 2087.799 844.701 1896.563 817.836 C 1705.326 790.972 2032.184 57.703 1287.972 4.679 C 543.76 -48.345 -94.6 349.283 11.605 1198.824 Z"
-              fill="var(--accent-neon, #CCFF00)"
+              fill="var(--accent-neon, #F3C6CC)"
               stroke="none"
             />
           </svg>
@@ -88,7 +88,7 @@ export default function BloopPreloader({
           justify-content: center;
           overflow: hidden;
           pointer-events: all;
-          background-color: var(--bg-primary, #050505);
+          background-color: var(--bg-primary, #660005);
           transition: opacity 0.6s cubic-bezier(0.44, 0, 0.56, 1);
         }
 
@@ -100,7 +100,7 @@ export default function BloopPreloader({
         .preloader-bg {
           position: absolute;
           inset: 0;
-          background-color: var(--bg-primary, #050505);
+          background-color: var(--bg-primary, #660005);
           z-index: 1;
           transition: background-color 0.5s ease;
         }
@@ -134,7 +134,7 @@ export default function BloopPreloader({
         .preloader-title {
           font-size: clamp(2.5rem, 7vw, 6.5rem);
           font-weight: 800;
-          color: var(--text-primary, #ffffff);
+          color: var(--text-primary, #F7F1E3);
           letter-spacing: -0.03em;
           line-height: 1;
           margin: 0;
@@ -146,7 +146,7 @@ export default function BloopPreloader({
           font-weight: 500;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: var(--accent-neon, #CCFF00);
+          color: var(--accent-neon, #F3C6CC);
           margin: 0;
           animation: slideInRight 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }

@@ -2,51 +2,80 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-const CARDS_DATA = [
+const ALL_CARDS = [
   {
-    id: 1,
-    num: '01',
+    id: 'about',
     title: 'About',
     path: '/about',
     subtitle: 'Background, product thinking, and craft philosophy.',
     tag: 'BACKGROUND',
-    gradient: 'linear-gradient(135deg, #0d0d0d, #1a1a2e, #16213e)',
-    accent: '#CCFF00',
-    icon: '✦'
+    bg: '#FAF4D4',
+    pillBg: '#F2D9DA',
+    borderColor: 'rgba(102, 0, 5, 0.15)',
+    textColor: '#660005',
+    subtextColor: '#660005',
   },
   {
-    id: 2,
-    num: '02',
+    id: 'guest-notes',
     title: 'Guest Notes',
     path: '/guest-notes',
     subtitle: 'Read visitor notes or leave your own message in the logbook.',
     tag: 'COMMUNITY',
-    gradient: 'linear-gradient(135deg, #051937, #004d7a, #008793)',
-    accent: '#38bdf8',
-    icon: '◈'
+    bg: '#FAF4D4',
+    pillBg: '#F2D9DA',
+    borderColor: 'rgba(102, 0, 5, 0.15)',
+    textColor: '#660005',
+    subtextColor: '#660005',
   },
   {
-    id: 3,
-    num: '03',
-    title: 'Blogs',
-    path: '/blogs',
-    subtitle: 'Articles on software architecture, UX, & design engineering.',
-    tag: 'WRITING',
-    gradient: 'linear-gradient(135deg, #0f0c29, #302b63, #24243e)',
-    accent: '#a78bfa',
-    icon: '⟨⟩'
+    id: 'books',
+    title: 'Books',
+    path: '/books',
+    subtitle: 'Books, notes, and stories that stay with me.',
+    tag: 'LIBRARY',
+    bg: '#FAF4D4',
+    pillBg: '#F2D9DA',
+    borderColor: 'rgba(102, 0, 5, 0.15)',
+    textColor: '#660005',
+    subtextColor: '#660005',
   },
   {
-    id: 4,
-    num: '04',
+    id: 'epigraphs',
     title: 'Epigraphs',
     path: '/epigraphs',
     subtitle: 'Quotes and timeless principles that inspire my everyday craft.',
     tag: 'PHILOSOPHY',
-    gradient: 'linear-gradient(135deg, #0a0a0a, #1f1b33, #2d1b69)',
-    accent: '#f472b6',
-    icon: '⬡'
+    bg: '#FAF4D4',
+    pillBg: '#F2D9DA',
+    borderColor: 'rgba(102, 0, 5, 0.15)',
+    textColor: '#660005',
+    subtextColor: '#660005',
+  },
+  {
+    id: 'blogs',
+    title: 'Blogs',
+    path: '/blogs',
+    subtitle: 'Personal notes, lessons, and reflections on building things.',
+    tag: 'WRITING',
+    bg: '#FAF4D4',
+    pillBg: '#F2D9DA',
+    borderColor: 'rgba(102, 0, 5, 0.15)',
+    textColor: '#660005',
+    subtextColor: '#660005',
+  },
+  {
+    id: '4rinlabs',
+    title: '4RinLabs',
+    path: '/4rinlabs',
+    subtitle: 'Four friends. One creative playground agency.',
+    tag: 'AGENCY',
+    bg: '#FAF4D4',
+    pillBg: '#F2D9DA',
+    borderColor: 'rgba(102, 0, 5, 0.15)',
+    textColor: '#660005',
+    subtextColor: '#660005',
   }
 ];
 
@@ -55,12 +84,11 @@ const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
 function AnimCard({ card, index }) {
   const cardRef = useRef(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
   const [hovered, setHovered] = useState(false);
   const [entered, setEntered] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setEntered(true), 100 + index * 120);
+    const t = setTimeout(() => setEntered(true), 80 + index * 100);
     return () => clearTimeout(t);
   }, [index]);
 
@@ -70,15 +98,13 @@ function AnimCard({ card, index }) {
     const { left, top, width, height } = el.getBoundingClientRect();
     const x = e.clientX - left;
     const y = e.clientY - top;
-    const rx = clamp((y / height * 2 - 1) * -14, -14, 14);
-    const ry = clamp((x / width * 2 - 1) * 14, -14, 14);
+    const rx = clamp((y / height * 2 - 1) * -8, -8, 8);
+    const ry = clamp((x / width * 2 - 1) * 8, -8, 8);
     setTilt({ x: rx, y: ry });
-    setGlowPos({ x: (x / width) * 100, y: (y / height) * 100 });
   };
 
   const onMouseLeave = () => {
     setTilt({ x: 0, y: 0 });
-    setGlowPos({ x: 50, y: 50 });
     setHovered(false);
   };
 
@@ -91,45 +117,32 @@ function AnimCard({ card, index }) {
       onMouseLeave={onMouseLeave}
       className="animated-card-wrapper"
       style={{
-        perspective: 900,
+        perspective: 1000,
         position: 'relative',
         opacity: entered ? 1 : 0,
-        transform: entered ? 'translateY(0px) scale(1)' : 'translateY(36px) scale(0.96)',
-        transition: `opacity 0.7s cubic-bezier(.22,1,.36,1) ${index * 0.12}s, transform 0.7s cubic-bezier(.22,1,.36,1) ${index * 0.12}s`,
-        textDecoration: 'none'
+        transform: entered ? 'translateY(0px)' : 'translateY(24px)',
+        transition: `opacity 0.6s cubic-bezier(.22,1,.36,1) ${index * 0.1}s, transform 0.6s cubic-bezier(.22,1,.36,1) ${index * 0.1}s`,
+        textDecoration: 'none',
+        height: '100%'
       }}
     >
-      {/* Outer Radial Glow */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: -2,
-          borderRadius: 22,
-          background: `radial-gradient(circle at ${glowPos.x}% ${glowPos.y}%, ${card.accent}55, transparent 70%)`,
-          opacity: hovered ? 1 : 0,
-          transition: 'opacity 0.4s ease',
-          pointerEvents: 'none',
-          zIndex: 0
-        }}
-      />
-
       {/* Main Card Container */}
       <div
         className="anim-card-inner"
         style={{
           position: 'relative',
-          zIndex: 1,
+          zIndex: 2,
           borderRadius: 20,
-          padding: '32px 26px 28px',
-          background: card.gradient,
-          border: `1px solid ${hovered ? card.accent + '66' : 'rgba(255,255,255,0.08)'}`,
+          padding: '28px 24px 22px',
+          background: card.bg,
+          border: `1px solid ${card.borderColor}`,
           boxShadow: hovered
-            ? `0 32px 64px rgba(0,0,0,0.55), 0 0 0 1px ${card.accent}33, inset 0 1px 0 rgba(255,255,255,0.12)`
-            : '0 16px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.07)',
-          transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateZ(0)`,
+            ? `0 20px 40px rgba(102, 0, 5, 0.12), 0 0 0 1px ${card.textColor}22`
+            : '0 8px 24px rgba(102, 0, 5, 0.05)',
+          transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateY(${hovered ? '-4px' : '0px'})`,
           transition: hovered
-            ? 'box-shadow 0.3s ease, border-color 0.3s ease, transform 0.15s ease'
-            : 'box-shadow 0.5s ease, border-color 0.5s ease, transform 0.6s cubic-bezier(.22,1,.36,1)',
+            ? 'box-shadow 0.25s ease, border-color 0.25s ease, transform 0.15s ease'
+            : 'box-shadow 0.4s ease, border-color 0.4s ease, transform 0.5s cubic-bezier(.22,1,.36,1)',
           cursor: 'pointer',
           overflow: 'hidden',
           height: '100%',
@@ -138,43 +151,16 @@ function AnimCard({ card, index }) {
           boxSizing: 'border-box'
         }}
       >
-        {/* Subtle Highlight Reflection */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: `radial-gradient(ellipse at ${glowPos.x}% ${glowPos.y}%, rgba(255,255,255,0.07) 0%, transparent 65%)`,
-            pointerEvents: 'none',
-            opacity: hovered ? 1 : 0,
-            transition: 'opacity 0.35s ease',
-            borderRadius: 20
-          }}
-        />
-
-        {/* Noise overlay */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            opacity: 0.04,
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
-            backgroundSize: '200px',
-            pointerEvents: 'none',
-            borderRadius: 20
-          }}
-        />
-
-        {/* Tag Pill with Pulsing Dot */}
+        {/* Tag Pill */}
         <div
           style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: 6,
-            padding: '5px 12px',
+            padding: '4px 11px',
             borderRadius: 999,
-            background: `${card.accent}22`,
-            border: `1px solid ${card.accent}44`,
-            marginBottom: 24,
+            background: card.pillBg,
+            marginBottom: 20,
             width: 'fit-content'
           }}
         >
@@ -183,53 +169,34 @@ function AnimCard({ card, index }) {
               width: 6,
               height: 6,
               borderRadius: '50%',
-              background: card.accent,
-              display: 'inline-block',
-              boxShadow: `0 0 6px ${card.accent}`,
-              animation: 'pulseDot 2s ease-in-out infinite'
+              background: card.textColor,
+              display: 'inline-block'
             }}
           />
           <span
             className="font-mono"
             style={{
-              fontSize: 11,
-              letterSpacing: '0.1em',
+              fontSize: 10,
+              letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: card.accent,
-              fontWeight: 600
+              color: card.textColor,
+              fontWeight: 700
             }}
           >
             {card.tag}
           </span>
         </div>
 
-        {/* Dynamic Icon */}
-        <div
-          style={{
-            fontSize: 36,
-            lineHeight: 1,
-            marginBottom: 16,
-            color: card.accent,
-            textShadow: `0 0 20px ${card.accent}88`,
-            transform: hovered ? 'scale(1.15) rotate(-6deg)' : 'scale(1) rotate(0deg)',
-            transition: 'transform 0.4s cubic-bezier(.34,1.56,.64,1)',
-            display: 'inline-block'
-          }}
-        >
-          {card.icon}
-        </div>
-
         {/* Title */}
         <h3
-          className="font-mono"
+          className="font-display"
           style={{
-            margin: '0 0 10px',
+            margin: '0 0 8px',
             fontWeight: 700,
-            fontSize: 24,
-            lineHeight: 1.2,
-            color: '#ffffff',
-            letterSpacing: '-0.02em',
-            textShadow: `0 2px 24px ${card.accent}33`
+            fontSize: 26,
+            lineHeight: 1.25,
+            color: card.textColor,
+            letterSpacing: '-0.01em'
           }}
         >
           {card.title}
@@ -239,10 +206,10 @@ function AnimCard({ card, index }) {
         <p
           className="font-sans"
           style={{
-            margin: '0 0 28px',
-            fontSize: 14,
-            lineHeight: 1.6,
-            color: 'rgba(255,255,255,0.65)',
+            margin: '0 0 24px',
+            fontSize: 13.5,
+            lineHeight: 1.55,
+            color: card.subtextColor,
             fontWeight: 400
           }}
         >
@@ -256,15 +223,16 @@ function AnimCard({ card, index }) {
             alignItems: 'center',
             justifyContent: 'space-between',
             marginTop: 'auto',
-            paddingTop: 16,
-            borderTop: '1px solid rgba(255,255,255,0.08)'
+            paddingTop: 14,
+            borderTop: `1px solid rgba(102, 0, 5, 0.12)`
           }}
         >
           <span
             className="font-mono"
             style={{
               fontSize: 12,
-              color: 'rgba(255,255,255,0.4)',
+              color: card.textColor,
+              opacity: 0.6,
               letterSpacing: '0.05em'
             }}
           >
@@ -277,29 +245,29 @@ function AnimCard({ card, index }) {
               display: 'flex',
               alignItems: 'center',
               gap: 6,
-              color: card.accent,
+              color: card.textColor,
               fontSize: 13,
-              fontWeight: 600,
-              letterSpacing: '0.04em',
-              transform: hovered ? 'translateX(4px)' : 'translateX(0)',
-              transition: 'transform 0.3s cubic-bezier(.34,1.56,.64,1)'
+              fontWeight: 700,
+              letterSpacing: '0.02em',
+              transform: hovered ? 'translateX(3px)' : 'translateX(0)',
+              transition: 'transform 0.25s cubic-bezier(.34,1.56,.64,1)'
             }}
           >
             <span>Explore</span>
             <svg
-              width="15"
-              height="15"
+              width="14"
+              height="14"
               viewBox="0 0 16 16"
               fill="none"
               style={{
                 transform: hovered ? 'translateX(3px)' : 'translateX(0)',
-                transition: 'transform 0.3s ease'
+                transition: 'transform 0.25s ease'
               }}
             >
               <path
                 d="M3 8H13M13 8L9 4M13 8L9 12"
-                stroke={card.accent}
-                strokeWidth="1.5"
+                stroke={card.textColor}
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
@@ -311,22 +279,56 @@ function AnimCard({ card, index }) {
   );
 }
 
+import BackgroundWatermark from './BackgroundWatermark';
+
 export default function ExploreMoreSection() {
+  const pathname = usePathname();
+  const isAboutPage = pathname === '/about';
+  const sectionBgColor = isAboutPage ? '#F2D9DA' : '#F5E1E2';
+
+  // Filter out the card corresponding to the current active page
+  const filteredCards = ALL_CARDS.filter((card) => {
+    if (!pathname) return true;
+    if (pathname === '/' && card.path === '/about') return true;
+    return pathname !== card.path && !pathname.startsWith(`${card.path}/`);
+  });
+
+  // Take first 4 cards and re-assign 01, 02, 03, 04 numbers
+  const displayCards = filteredCards.slice(0, 4).map((card, idx) => ({
+    ...card,
+    num: `0${idx + 1}`
+  }));
+
+  const isHomePage = pathname === '/';
+
   return (
-    <section id="explore-more" className="explore-section">
+    <section 
+      id="explore-more" 
+      className="explore-section" 
+      data-color={sectionBgColor}
+      style={{ backgroundColor: isHomePage ? 'transparent' : sectionBgColor }}
+    >
+      {/* Giant Centered Background Typography Watermark (Removed on /about page) */}
+      {!isAboutPage && (
+        <BackgroundWatermark word="EXPLORE" color="rgba(102, 0, 5, 0.065)" />
+      )}
+
       <div className="explore-container">
         {/* SECTION HEADER */}
         <div className="explore-header">
-          <span className="eyebrow font-mono">EXPLORE MORE</span>
-          <h2 className="section-title font-mono">Explore More</h2>
+          <div className="eyebrow-row">
+            <span className="eyebrow-dot" />
+            <span className="eyebrow font-mono">EXPLORE MORE</span>
+          </div>
+          <h2 className="section-title font-display">Explore More</h2>
           <p className="section-subtitle font-sans">
             Dive into background, guest notes, technical articles, or curated epigraphs.
           </p>
         </div>
 
-        {/* FRAMER ANIMATED CARDS GRID */}
+        {/* CARDS GRID */}
         <div className="animated-cards-grid">
-          {CARDS_DATA.map((card, index) => (
+          {displayCards.map((card, index) => (
             <AnimCard key={card.id} card={card} index={index} />
           ))}
         </div>
@@ -335,19 +337,42 @@ export default function ExploreMoreSection() {
       <style jsx>{`
         .explore-section {
           position: relative;
-          background-color: var(--bg-primary);
-          padding: 6rem 0 7rem 0;
-          color: var(--text-primary);
+          background-color: transparent;
+          padding: 6.5rem 0 7rem 0;
+          color: #660005;
           width: 100%;
-          border-top: 1px solid var(--border-subtle);
           box-sizing: border-box;
           overflow: hidden;
-          transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        .bg-typography-canvas {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0.4rem;
+          font-size: clamp(10vw, 17vw, 22vw);
+          font-weight: 900;
+          line-height: 0.76;
+          color: rgba(102, 0, 5, 0.065);
+          letter-spacing: -0.04em;
+          white-space: nowrap;
+          pointer-events: none;
+          user-select: none;
+          z-index: 1;
+        }
+
+        .typo-row {
+          line-height: 0.76;
         }
 
         .explore-container {
+          position: relative;
+          z-index: 2;
           width: 100%;
-          max-width: 1240px;
+          max-width: 1320px;
           margin: 0 auto;
           padding: 0 3.5rem;
         }
@@ -355,53 +380,58 @@ export default function ExploreMoreSection() {
         .explore-header {
           display: flex;
           flex-direction: column;
-          margin-bottom: 3.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .eyebrow-row {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .eyebrow-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #660005;
+          display: inline-block;
         }
 
         .eyebrow {
           font-size: 0.78rem;
           letter-spacing: 0.18em;
-          color: var(--accent-neon);
-          margin-bottom: 0.4rem;
+          color: #660005;
+          font-weight: 700;
         }
 
         .section-title {
-          font-size: clamp(2.2rem, 4vw, 3.4rem);
-          font-weight: 500;
-          color: var(--text-primary);
+          font-size: clamp(3rem, 5vw, 4.5rem);
+          font-weight: 400;
+          color: #660005;
           letter-spacing: -0.02em;
-          line-height: 1.1;
-          margin-bottom: 0.6rem;
+          line-height: 1.05;
+          margin-bottom: 0.75rem;
         }
 
         .section-subtitle {
-          font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-          color: var(--text-secondary);
-          max-width: 600px;
+          font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+          color: #660005;
+          max-width: 620px;
           line-height: 1.55;
         }
 
         .animated-cards-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 1.5rem;
+          gap: 1.35rem;
           width: 100%;
-        }
-
-        @keyframes pulseDot {
-          0%, 100% {
-            opacity: 1;
-            box-shadow: 0 0 6px currentColor;
-          }
-          50% {
-            opacity: 0.5;
-            box-shadow: 0 0 12px currentColor;
-          }
         }
 
         @media (max-width: 1100px) {
           .animated-cards-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
           }
         }
 
@@ -411,9 +441,11 @@ export default function ExploreMoreSection() {
           }
           .animated-cards-grid {
             grid-template-columns: 1fr;
+            gap: 1.25rem;
           }
         }
       `}</style>
     </section>
   );
 }
+

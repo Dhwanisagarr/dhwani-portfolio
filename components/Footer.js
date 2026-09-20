@@ -1,12 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+  const isAboutPage = pathname === '/about';
+  const footerBgColor = isAboutPage ? '#F2D9DA' : '#F5E1E2';
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="site-footer">
+    <footer 
+      className="site-footer" 
+      data-color={footerBgColor}
+      style={{ backgroundColor: isHomePage ? 'transparent' : footerBgColor }}
+    >
       <div className="container">
         <div className="footer-top">
           {/* Brand Signature */}
@@ -16,9 +25,16 @@ export default function Footer() {
               <span>DHWANI SAGAR</span>
             </Link>
 
-            <p className="footer-tagline">
+            <p className="footer-tagline font-sans">
               Crafting thoughtful digital experiences at the intersection of product thinking, design, and technology.
             </p>
+
+            <a 
+              href="mailto:dhwanisagar17@gmail.com" 
+              className="footer-email-link font-mono"
+            >
+              dhwanisagar17@gmail.com
+            </a>
           </div>
 
           {/* Navigation Links */}
@@ -28,6 +44,7 @@ export default function Footer() {
               <Link href="/">Home</Link>
               <Link href="/about">About</Link>
               <Link href="/projects">Projects</Link>
+              <Link href="/4rinlabs">4RinLabs</Link>
               <Link href="/certifications">Certifications</Link>
             </div>
 
@@ -41,9 +58,9 @@ export default function Footer() {
 
             <div className="nav-col">
               <span className="col-heading font-mono">CONNECT</span>
-              <a href="mailto:dhwani.sagar@example.com">Email</a>
-              <a href="https://linkedin.com/in/dhwanisagar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://github.com/dhwanisagar" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="mailto:dhwanisagar17@gmail.com">Email</a>
+              <a href="https://www.linkedin.com/in/dhwanisagar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://github.com/Dhwanisagarr" target="_blank" rel="noopener noreferrer">GitHub</a>
               <Link href="/contact">Contact</Link>
             </div>
           </div>
@@ -57,17 +74,16 @@ export default function Footer() {
 
           <div className="footer-meta font-mono">
             <span>DESIGNED & BUILT WITH INTENT</span>
-            <span className="accent-dot">•</span>
-            <Link href="/admin" className="admin-btn">CMS ADMIN</Link>
           </div>
         </div>
       </div>
 
       <style jsx>{`
         .site-footer {
-          background: #050505;
-          border-top: 1px solid var(--border-subtle);
+          background-color: transparent;
+          border-top: 1px solid rgba(102, 0, 5, 0.15);
           padding: 4.5rem 0 2.5rem 0;
+          color: #660005;
         }
 
         .footer-top {
@@ -75,7 +91,7 @@ export default function Footer() {
           grid-template-columns: 1.25fr 2fr;
           gap: 4rem;
           padding-bottom: 3.5rem;
-          border-bottom: 1px solid var(--border-subtle);
+          border-bottom: 1px solid rgba(102, 0, 5, 0.15);
         }
 
         .footer-brand {
@@ -89,24 +105,41 @@ export default function Footer() {
           align-items: center;
           gap: 0.75rem;
           font-size: 1.1rem;
-          color: var(--text-primary);
+          color: #660005;
           text-decoration: none;
           letter-spacing: 0.1em;
+          font-weight: 700;
         }
 
         .brand-dot {
           width: 8px;
           height: 8px;
-          background: var(--accent-neon);
+          background: #660005;
           border-radius: 50%;
-          box-shadow: 0 0 10px var(--accent-neon);
+          box-shadow: 0 0 10px rgba(102, 0, 5, 0.3);
         }
 
         .footer-tagline {
           font-size: 0.95rem;
           line-height: 1.65;
-          color: var(--text-secondary);
+          color: #660005;
           max-width: 320px;
+        }
+
+        .footer-email-link {
+          font-size: 0.9rem;
+          color: #660005;
+          text-decoration: none;
+          font-weight: 600;
+          letter-spacing: 0.02em;
+          display: inline-block;
+          margin-top: -0.25rem;
+          transition: opacity 0.2s ease;
+        }
+
+        .footer-email-link:hover {
+          opacity: 0.8;
+          text-decoration: underline;
         }
 
         .footer-nav {
@@ -124,19 +157,20 @@ export default function Footer() {
         .col-heading {
           font-size: 0.75rem;
           letter-spacing: 0.15em;
-          color: var(--accent-neon);
+          color: #660005;
           margin-bottom: 0.5rem;
+          font-weight: 700;
         }
 
         .nav-col :global(a) {
           font-size: 0.9rem;
-          color: var(--text-secondary);
+          color: #660005;
           text-decoration: none;
           transition: color 0.2s ease;
         }
 
         .nav-col :global(a:hover) {
-          color: var(--text-primary);
+          color: #660005;
         }
 
         .footer-bottom {
@@ -145,7 +179,8 @@ export default function Footer() {
           justify-content: space-between;
           padding-top: 2rem;
           font-size: 0.8rem;
-          color: var(--text-muted);
+          color: #660005;
+          opacity: 0.95;
           flex-wrap: wrap;
           gap: 1rem;
         }
@@ -157,17 +192,17 @@ export default function Footer() {
         }
 
         .accent-dot {
-          color: var(--accent-neon);
+          color: #660005;
         }
 
         .admin-btn {
-          color: var(--text-muted);
+          color: #660005;
           text-decoration: none;
           transition: color 0.2s ease;
         }
 
         .admin-btn:hover {
-          color: var(--accent-neon);
+          color: #660005;
         }
 
         @media (max-width: 992px) {

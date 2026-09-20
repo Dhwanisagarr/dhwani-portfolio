@@ -24,7 +24,7 @@ export default function HomeWorkEduSection() {
   return (
     <section id="experience" className="work-edu-section" data-color="#FAF4D4">
       {/* Giant Whole-Word Background Typography Watermark */}
-      <BackgroundWatermark word="EXPERIENCE" color="rgba(169, 0, 18, 0.065)" />
+      <BackgroundWatermark word="EXPERIENCE" color="rgba(102, 0, 5, 0.065)" />
 
       <div className="work-edu-container">
         <div className="work-edu-content">
@@ -84,7 +84,7 @@ export default function HomeWorkEduSection() {
           background-color: transparent;
           padding: 5.5rem 0;
           box-sizing: border-box;
-          color: #CC2027;
+          color: #660005;
           width: 100%;
           overflow: hidden;
         }
@@ -115,21 +115,21 @@ export default function HomeWorkEduSection() {
           width: 7px;
           height: 7px;
           border-radius: 50%;
-          background-color: #CC2027;
+          background-color: #660005;
           display: inline-block;
         }
 
         .eyebrow {
           font-size: 0.8rem;
           letter-spacing: 0.18em;
-          color: #CC2027;
+          color: #660005;
           font-weight: 600;
         }
 
         .section-title {
           font-size: clamp(2.4rem, 4.2vw, 3.8rem);
           font-weight: 600;
-          color: #CC2027;
+          color: #660005;
           letter-spacing: -0.02em;
           line-height: 1.1;
           margin-bottom: 0.5rem;
@@ -137,7 +137,7 @@ export default function HomeWorkEduSection() {
 
         .section-subtitle {
           font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-          color: #B91C23;
+          color: #660005;
           max-width: 600px;
           line-height: 1.5;
           font-style: italic;
@@ -164,7 +164,7 @@ export default function HomeWorkEduSection() {
           font-size: clamp(2.6rem, 4.2vw, 4rem);
           font-weight: 600;
           letter-spacing: -0.02em;
-          color: #CC2027;
+          color: #660005;
           text-transform: none;
           margin-bottom: 2.75rem;
           line-height: 1.1;
@@ -194,14 +194,14 @@ export default function HomeWorkEduSection() {
         .company-name {
           font-size: 1.25rem;
           font-weight: 700;
-          color: #CC2027;
+          color: #660005;
           letter-spacing: -0.01em;
           line-height: 1.3;
         }
 
         .role-name {
           font-size: 0.98rem;
-          color: #D5242B;
+          color: #660005;
           font-weight: 500;
         }
 
@@ -212,7 +212,7 @@ export default function HomeWorkEduSection() {
 
         .date-badge {
           font-size: 0.95rem;
-          color: #B91C23;
+          color: #660005;
           font-weight: 600;
           white-space: nowrap;
         }
@@ -229,7 +229,7 @@ export default function HomeWorkEduSection() {
         .vertical-divider {
           width: 1px;
           height: 220px;
-          background: rgba(204, 32, 39, 0.25);
+          background: rgba(102, 0, 5, 0.25);
         }
 
         /* Education Card */
@@ -242,7 +242,7 @@ export default function HomeWorkEduSection() {
         .degree-title {
           font-size: 1.25rem;
           font-weight: 700;
-          color: #CC2027;
+          color: #660005;
           line-height: 1.4;
           letter-spacing: -0.01em;
           max-width: 480px;
@@ -250,14 +250,14 @@ export default function HomeWorkEduSection() {
 
         .institution-name {
           font-size: 0.98rem;
-          color: #D5242B;
+          color: #660005;
           line-height: 1.45;
           font-weight: 500;
         }
 
         .cgpa-text {
           font-size: 0.95rem;
-          color: #B91C23;
+          color: #660005;
           margin-top: -0.5rem;
           font-weight: 600;
         }

@@ -150,7 +150,7 @@ export default function CtaSection() {
         .eyebrow-pill {
           font-size: 0.75rem;
           letter-spacing: 0.16em;
-          color: #efff00;
+          color: #F5F0DF;
           padding: 0.35rem 0.9rem;
           background: rgba(239, 255, 0, 0.08);
           border: 1px solid rgba(239, 255, 0, 0.25);
@@ -203,14 +203,14 @@ export default function CtaSection() {
         }
 
         .featured-tall-card:hover {
-          border-color: #efff00;
+          border-color: #F5F0DF;
           box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(239, 255, 0, 0.08);
         }
 
         .badge-tag {
           font-size: 0.72rem;
           letter-spacing: 0.14em;
-          color: #efff00;
+          color: #F5F0DF;
           padding: 0.35rem 0.8rem;
           background: rgba(239, 255, 0, 0.1);
           border: 1px solid rgba(239, 255, 0, 0.3);
@@ -221,7 +221,7 @@ export default function CtaSection() {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: #efff00;
+          background: #F5F0DF;
           color: #000000;
           display: flex;
           align-items: center;
@@ -250,7 +250,7 @@ export default function CtaSection() {
           align-items: center;
           gap: 0.75rem;
           padding: 0.85rem 1.6rem;
-          background: #efff00;
+          background: #F5F0DF;
           border-radius: 100px;
           color: #000000;
           font-weight: 700;
@@ -302,7 +302,7 @@ export default function CtaSection() {
 
         .grid-card:hover {
           transform: translateY(-6px);
-          border-color: #efff00;
+          border-color: #F5F0DF;
           background: #181822;
           box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(239, 255, 0, 0.08);
         }
@@ -329,12 +329,12 @@ export default function CtaSection() {
 
         .icon-symbol {
           font-size: 1.15rem;
-          color: #efff00;
+          color: #F5F0DF;
         }
 
         .grid-card:hover .card-icon-box {
-          background: #efff00;
-          border-color: #efff00;
+          background: #F5F0DF;
+          border-color: #F5F0DF;
         }
 
         .grid-card:hover .icon-symbol {
@@ -356,8 +356,8 @@ export default function CtaSection() {
         }
 
         .grid-card:hover .card-arrow-circle {
-          background: #efff00;
-          border-color: #efff00;
+          background: #F5F0DF;
+          border-color: #F5F0DF;
           color: #000000;
           transform: translate(2px, -2px);
         }
@@ -378,7 +378,7 @@ export default function CtaSection() {
         }
 
         .grid-card:hover .grid-card-title {
-          color: #efff00;
+          color: #F5F0DF;
         }
 
         .grid-card-desc {

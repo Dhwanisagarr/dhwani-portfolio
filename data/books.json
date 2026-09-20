@@ -1,38 +1,412 @@
 [
   {
-    "id": "design-of-everyday-things",
-    "title": "The Design of Everyday Things",
-    "author": "Don Norman",
+    "id": "five-point-someone",
+    "title": "Five Point Someone",
+    "author": "Chetan Bhagat",
     "status": "Read",
-    "rating": "5/5",
-    "category": "Design & Psychology",
-    "notes": "A fundamental masterclass on affordances, signifiers, feedback, and conceptual models. Changed how I view everyday objects and software interfaces."
+    "pages": 270,
+    "year": 2004,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/6832129-L.jpg"
   },
   {
-    "id": "refactoring-ui",
-    "title": "Refactoring UI",
-    "author": "Adam Wathan & Steve Schoger",
+    "id": "one-night-the-call-center",
+    "title": "One Night @ the Call Center",
+    "author": "Chetan Bhagat",
     "status": "Read",
-    "rating": "5/5",
-    "category": "UI/UX",
-    "notes": "Practical tactical tips on visual hierarchy, layout spacing, color selection, and designing from an developer's perspective."
+    "pages": 289,
+    "year": 2005,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/212576-L.jpg"
   },
   {
-    "id": "clean-code",
-    "title": "Clean Code",
-    "author": "Robert C. Martin",
+    "id": "the-3-mistakes-of-my-life",
+    "title": "The 3 Mistakes of My Life",
+    "author": "Chetan Bhagat",
     "status": "Read",
-    "rating": "4.5/5",
-    "category": "Engineering",
-    "notes": "Essential principles on readability, meaningful variable naming, function responsibility, and maintaining long-term code health."
+    "pages": 258,
+    "year": 2008,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/7434198-L.jpg"
   },
   {
-    "id": "inspired",
-    "title": "INSPIRED: How to Create Tech Products Customers Love",
-    "author": "Marty Cagan",
+    "id": "2-states",
+    "title": "2 States",
+    "author": "Chetan Bhagat",
+    "status": "Read",
+    "pages": 269,
+    "year": 2009,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/6994571-L.jpg"
+  },
+  {
+    "id": "revolution-2020",
+    "title": "Revolution 2020",
+    "author": "Chetan Bhagat",
+    "status": "Read",
+    "pages": 296,
+    "year": 2011,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/7011589-L.jpg"
+  },
+  {
+    "id": "half-girlfriend",
+    "title": "Half Girlfriend",
+    "author": "Chetan Bhagat",
+    "status": "Read",
+    "pages": 260,
+    "year": 2014,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/8783246-L.jpg"
+  },
+  {
+    "id": "one-indian-girl",
+    "title": "One Indian Girl",
+    "author": "Chetan Bhagat",
+    "status": "Want to Read",
+    "pages": 272,
+    "year": 2016,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/10117751-L.jpg"
+  },
+  {
+    "id": "the-girl-in-room-105",
+    "title": "The Girl in Room 105",
+    "author": "Chetan Bhagat",
+    "status": "Read",
+    "pages": 312,
+    "year": 2018,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/9637345-L.jpg"
+  },
+  {
+    "id": "one-arranged-murder",
+    "title": "One Arranged Murder",
+    "author": "Chetan Bhagat",
+    "status": "Read",
+    "pages": 304,
+    "year": 2020,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/10504047-L.jpg"
+  },
+  {
+    "id": "the-best-couple-ever",
+    "title": "The Best Couple Ever",
+    "author": "Novoneel Chakraborty",
+    "status": "Read",
+    "pages": 240,
+    "year": 2019,
+    "avgRating": null,
+    "coverUrl": "/images/books/the-best-couple-ever.png"
+  },
+  {
+    "id": "write-me-a-love-story",
+    "title": "Write Me A Love Story",
+    "author": "Ravinder Singh",
+    "status": "Read",
+    "pages": 240,
+    "year": 2021,
+    "avgRating": null,
+    "coverUrl": "/images/books/write-me-a-love-story.png"
+  },
+  {
+    "id": "ugly-love",
+    "title": "Ugly Love",
+    "author": "Colleen Hoover",
+    "status": "Read",
+    "pages": 336,
+    "year": 2014,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/12856728-L.jpg"
+  },
+  {
+    "id": "it-starts-with-us",
+    "title": "It Starts with Us",
+    "author": "Colleen Hoover",
+    "status": "Read",
+    "pages": 336,
+    "year": 2022,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/12749873-L.jpg"
+  },
+  {
+    "id": "it-ends-with-us",
+    "title": "It Ends with Us",
+    "author": "Colleen Hoover",
+    "status": "Read",
+    "pages": 384,
+    "year": 2016,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/10473609-L.jpg"
+  },
+  {
+    "id": "atomic-habits",
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "status": "Read",
+    "pages": 320,
+    "year": 2018,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/12539702-L.jpg"
+  },
+  {
+    "id": "ikigai",
+    "title": "Ikigai",
+    "author": "Francesc Miralles & H\u00e9ctor Garc\u00eda",
+    "status": "Read",
+    "pages": 208,
+    "year": 2016,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/11300391-L.jpg"
+  },
+  {
+    "id": "rich-dad-poor-dad",
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki & Sharon Lechter",
+    "status": "Read",
+    "pages": 336,
+    "year": 1997,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/8315603-L.jpg"
+  },
+  {
+    "id": "the-psychology-of-money",
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "status": "Read",
+    "pages": 256,
+    "year": 2020,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/10389354-L.jpg"
+  },
+  {
+    "id": "the-alchemist",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "status": "Read",
+    "pages": 208,
+    "year": 1988,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/11556106-L.jpg"
+  },
+  {
+    "id": "the-habit-of-winning",
+    "title": "The Habit of Winning",
+    "author": "Prakash Iyer",
+    "status": "Read",
+    "pages": 256,
+    "year": 2011,
+    "avgRating": null,
+    "coverUrl": "/images/books/the-habit-of-winning.png"
+  },
+  {
+    "id": "do-it-today",
+    "title": "Do It Today",
+    "author": "Darius Foroux",
+    "status": "Read",
+    "pages": 172,
+    "year": 2018,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/13165210-L.jpg"
+  },
+  {
+    "id": "the-art-of-not-overthinking",
+    "title": "The Art of Not Overthinking",
+    "author": "Shaurya Kapoor",
+    "status": "Read",
+    "pages": 164,
+    "year": 2023,
+    "avgRating": null,
+    "coverUrl": "/images/books/the-art-of-not-overthinking.png"
+  },
+  {
+    "id": "the-art-of-laziness",
+    "title": "The Art of Laziness",
+    "author": "Library Mindset",
+    "status": "Read",
+    "pages": 128,
+    "year": 2024,
+    "avgRating": null,
+    "coverUrl": "/images/books/the-art-of-laziness.png"
+  },
+  {
+    "id": "the-art-of-being-alone",
+    "title": "The Art of Being Alone",
+    "author": "Renuka Gavrani",
+    "status": "Read",
+    "pages": 142,
+    "year": 2023,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/15052166-L.jpg"
+  },
+  {
+    "id": "way-of-life",
+    "title": "Way of Life",
+    "author": "Santhosh Adiga U.",
     "status": "Reading",
-    "rating": "5/5",
-    "category": "Product Management",
-    "notes": "Explores how top product organizations discover and deliver technology products that solve real customer problems effectively."
+    "pages": 180,
+    "year": 2020,
+    "avgRating": null,
+    "coverUrl": "/images/books/way-of-life.png"
+  },
+  {
+    "id": "she-broke-up-i-didnt",
+    "title": "She Broke Up, I Didn’t! ... I Just Kissed Someone Else!",
+    "author": "Durjoy Datta",
+    "status": "Read",
+    "pages": 240,
+    "year": 2010,
+    "avgRating": null,
+    "coverUrl": "/images/books/she-broke-up-i-didnt.png"
+  },
+  {
+    "id": "how-to-win-friends-and-influence-people",
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "status": "Read",
+    "pages": 288,
+    "year": 1936,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/13314878-L.jpg"
+  },
+  {
+    "id": "the-power-of-your-subconscious-mind",
+    "title": "The Power of Your Subconscious Mind",
+    "author": "Joseph Murphy",
+    "status": "Read",
+    "pages": 304,
+    "year": 1963,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/6553019-L.jpg"
+  },
+  {
+    "id": "the-subtle-art-of-not-giving-a-f-ck",
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "status": "Reading",
+    "pages": 224,
+    "year": 2016,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/8231990-L.jpg"
+  },
+  {
+    "id": "mindset",
+    "title": "Mindset",
+    "author": "Carol S. Dweck",
+    "status": "Want to Read",
+    "pages": 320,
+    "year": 2006,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/746414-L.jpg"
+  },
+  {
+    "id": "deep-work",
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "status": "Want to Read",
+    "pages": 304,
+    "year": 2016,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/7988607-L.jpg"
+  },
+  {
+    "id": "the-compound-effect",
+    "title": "The Compound Effect",
+    "author": "Darren Hardy",
+    "status": "Want to Read",
+    "pages": 192,
+    "year": 2010,
+    "avgRating": null,
+    "coverUrl": "/images/books/the-compound-effect.png"
+  },
+  {
+    "id": "the-power-of-moments",
+    "title": "The Power of Moments",
+    "author": "Chip Heath & Dan Heath",
+    "status": "Want to Read",
+    "pages": 320,
+    "year": 2017,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/8116746-L.jpg"
+  },
+  {
+    "id": "range",
+    "title": "Range",
+    "author": "David Epstein",
+    "status": "Want to Read",
+    "pages": 352,
+    "year": 2019,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/8782615-L.jpg"
+  },
+  {
+    "id": "start-with-why",
+    "title": "Start with Why",
+    "author": "Simon Sinek",
+    "status": "Want to Read",
+    "pages": 256,
+    "year": 2009,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/6395237-L.jpg"
+  },
+  {
+    "id": "grit",
+    "title": "Grit",
+    "author": "Angela Duckworth",
+    "status": "Want to Read",
+    "pages": 352,
+    "year": 2016,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/7438753-L.jpg"
+  },
+  {
+    "id": "the-5-second-rule",
+    "title": "The 5 Second Rule",
+    "author": "Mel Robbins",
+    "status": "Want to Read",
+    "pages": 240,
+    "year": 2017,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/8114155-L.jpg"
+  },
+  {
+    "id": "thinking-in-bets",
+    "title": "Thinking in Bets",
+    "author": "Annie Duke",
+    "status": "Want to Read",
+    "pages": 288,
+    "year": 2018,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/8792782-L.jpg"
+  },
+  {
+    "id": "the-four-agreements",
+    "title": "The Four Agreements",
+    "author": "Don Miguel Ruiz",
+    "status": "Want to Read",
+    "pages": 160,
+    "year": 1997,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/924521-L.jpg"
+  },
+  {
+    "id": "400-days",
+    "title": "400 Days",
+    "author": "Chetan Bhagat",
+    "status": "Want to Read",
+    "pages": 352,
+    "year": 2021,
+    "avgRating": null,
+    "coverUrl": "https://covers.openlibrary.org/b/id/12239364-L.jpg"
+  },
+  {
+    "id": "12-years-my-messed-up-love-story",
+    "title": "12 Years: My Messed-up Love Story",
+    "author": "Chetan Bhagat",
+    "status": "Want to Read",
+    "pages": 280,
+    "year": 2025,
+    "avgRating": null,
+    "coverUrl": "/images/books/12-years.png"
   }
 ]

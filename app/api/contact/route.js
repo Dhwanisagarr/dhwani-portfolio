@@ -1,4 +1,8 @@
 import { NextResponse } from 'next/server';
+import fs from 'fs/promises';
+import path from 'path';
+
+const dataPath = path.join(process.cwd(), 'data', 'contact-messages.json');
 
 export async function POST(request) {
   try {
@@ -12,12 +16,32 @@ export async function POST(request) {
       );
     }
 
-    // Process contact submission (e.g. logging or preparing for email integration)
-    console.log('[Contact Submission Received]:', { name, email, subject, message, date: new Date().toISOString() });
+    let messages = [];
+    try {
+      const fileData = await fs.readFile(dataPath, 'utf8');
+      messages = JSON.parse(fileData);
+    } catch (e) {
+      messages = [];
+    }
+
+    const newMessage = {
+      id: `msg-${Date.now()}`,
+      name: name.trim(),
+      email: email.trim(),
+      subject: (subject || 'General Inquiry').trim(),
+      message: message.trim(),
+      date: new Date().toISOString(),
+      read: false
+    };
+
+    // Prepend new messages so newest appears first
+    messages.unshift(newMessage);
+
+    await fs.writeFile(dataPath, JSON.stringify(messages, null, 2), 'utf8');
 
     return NextResponse.json(
-      { success: true, message: 'Message received successfully!' },
-      { status: 200 }
+      { success: true, message: 'Message received successfully!', item: newMessage },
+      { status: 201 }
     );
   } catch (error) {
     return NextResponse.json(

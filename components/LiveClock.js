@@ -74,8 +74,8 @@ export default function LiveClock() {
           flex-direction: column;
           gap: 0.85rem;
           padding: 1.5rem 1.75rem;
-          background: rgba(18, 18, 24, 0.94);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #F2D9DA;
+          border: 1px solid #E3BDBE;
           border-radius: 16px;
         }
 
@@ -84,7 +84,7 @@ export default function LiveClock() {
           align-items: center;
           justify-content: space-between;
           padding-bottom: 0.6rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+          border-bottom: 1px solid #E3BDBE;
         }
 
         .clock-row:last-child {
@@ -95,18 +95,20 @@ export default function LiveClock() {
         .clock-label {
           font-size: 0.72rem;
           letter-spacing: 0.12em;
-          color: #808085;
+          color: #660005;
+          font-weight: 700;
         }
 
         .clock-val {
           font-size: 0.88rem;
-          color: #ffffff;
+          color: #660005;
+          font-weight: 600;
         }
 
         .clock-row.highlight {
           padding: 0.65rem 0.85rem;
-          background: rgba(239, 255, 0, 0.05);
-          border: 1px solid rgba(239, 255, 0, 0.2);
+          background: #FAF4D4;
+          border: 1px solid #E3BDBE;
           border-radius: 8px;
           margin: 0.15rem 0;
         }
@@ -119,15 +121,15 @@ export default function LiveClock() {
 
         .time-text {
           font-size: 1rem;
-          font-weight: 600;
-          color: #efff00;
+          font-weight: 700;
+          color: #660005;
         }
 
         .ist-tag {
           font-size: 0.68rem;
           padding: 0.15rem 0.4rem;
-          background: #efff00;
-          color: #000000;
+          background: #660005;
+          color: #FAF4D4;
           font-weight: 700;
           border-radius: 4px;
         }
@@ -137,15 +139,16 @@ export default function LiveClock() {
           align-items: center;
           gap: 0.5rem;
           font-size: 0.82rem;
-          color: #efff00;
+          color: #660005;
+          font-weight: 600;
         }
 
         .dot {
           width: 7px;
           height: 7px;
-          background: #efff00;
+          background: #660005;
           border-radius: 50%;
-          box-shadow: 0 0 8px #efff00;
+          box-shadow: 0 0 8px #660005;
           animation: pulseGlow 2s infinite;
         }
 

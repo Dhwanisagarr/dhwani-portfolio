@@ -1,147 +1,173 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function HeroSection() {
+  // Spring transition physics config explicitly specified per prompt spec
+  const springTransition = {
+    type: 'spring',
+    stiffness: 120,
+    damping: 10,
+    mass: 0.8,
+  };
+
   return (
-    <section className="hero-container">
-      {/* Background Portrait & Vignette Overlays */}
-      <div className="hero-portrait-bg" />
-      <div className="hero-vignette-overlay" />
-      <div className="hero-grain-overlay" />
+    <section className="hero-container" data-color="#660005" aria-label="Hero Section">
+      {/* Accessible visual header for screen readers & SEO */}
+      <h1 className="sr-only">
+        Dhwani Sagar — Crafting Beautiful Digital Experiences
+      </h1>
 
-      <div className="hero-center-content">
-        <div className="eyebrow-text">
-          CRAFTING BEAUTIFUL DIGITAL EXPERIENCES
-        </div>
+      {/* Hero Content Layer */}
+      <div className="hero-content-wrapper">
+        {/* Name Block Container containing tagline, stacked DHWANI / SAGAR, and OPEN TO WORK */}
+        <div className="hero-name-block">
+          {/* 1. Tagline */}
+          <motion.p
+            initial={{ opacity: 0, x: 300 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ...springTransition, delay: 0.1 }}
+            className="hero-tagline"
+          >
+            CRAFTING BEAUTIFUL DIGITAL EXPERIENCES
+          </motion.p>
 
-        <div className="title-block">
-          <h1 className="hero-title">
-            <span className="title-line">DHWANI</span>
-            <span className="title-line">SAGAR</span>
-          </h1>
+          {/* 2. DHWANI line */}
+          <motion.div
+            initial={{ opacity: 0, x: 300 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ...springTransition, delay: 0.25 }}
+            className="name-line line-dhwani"
+          >
+            DHWANI
+          </motion.div>
 
-          <div className="status-label">
+          {/* 3. SAGAR line */}
+          <motion.div
+            initial={{ opacity: 0, x: 300 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ...springTransition, delay: 0.4 }}
+            className="name-line line-sagar"
+          >
+            SAGAR
+          </motion.div>
+
+          {/* 4. Open to Work Text - Right aligned under R of SAGAR */}
+          <motion.div
+            initial={{ opacity: 0, x: 300 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ...springTransition, delay: 0.55 }}
+            className="hero-open-to-work"
+          >
             OPEN TO WORK
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      <style jsx>{`
+      <style jsx global>{`
         .hero-container {
           position: relative;
           width: 100%;
-          min-height: 100vh;
+          max-width: 100%;
           height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: #000000;
+          min-height: 100vh;
+          background-color: #660005;
           overflow: hidden;
+          box-sizing: border-box;
         }
 
-        .hero-portrait-bg {
+        .hero-content-wrapper {
           position: absolute;
           inset: 0;
-          background-image: url('/hero_portrait.png');
-          background-size: cover;
-          background-position: center 20%;
-          filter: grayscale(100%) contrast(120%) brightness(0.85);
-          opacity: 0.95;
-          z-index: 1;
-        }
-
-        .hero-vignette-overlay {
-          position: absolute;
-          inset: 0;
-          background: 
-            radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.7) 65%, rgba(0, 0, 0, 0.95) 100%),
-            linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.9) 100%);
-          z-index: 2;
-          pointer-events: none;
-        }
-
-        .hero-grain-overlay {
-          position: absolute;
-          inset: 0;
-          background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
-          background-size: 4px 4px;
-          z-index: 3;
-          pointer-events: none;
-        }
-
-        .hero-center-content {
-          position: relative;
           z-index: 10;
+          pointer-events: none;
+        }
+
+        .hero-name-block {
+          position: absolute;
+          top: 16%;
+          left: 15%;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          padding: 0 1.5rem;
+          pointer-events: auto;
         }
 
-        .eyebrow-text {
-          font-family: var(--font-mono);
-          font-size: clamp(0.7rem, 1.4vw, 0.95rem);
-          font-weight: 500;
-          letter-spacing: 0.28em;
-          color: #e6ff00;
+        .hero-tagline {
+          font-family: 'Quicksand', 'Manrope', sans-serif;
+          letter-spacing: 0.32em;
+          font-size: clamp(13px, 1.17vw, 18px);
+          color: #FFFFFF;
+          margin: 0 0 0.15vw 13vw;
           text-transform: uppercase;
-          margin-bottom: 0.85rem;
-          text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          pointer-events: auto;
         }
 
-        .title-block {
-          display: inline-flex;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-        }
-
-        .hero-title {
-          font-family: var(--font-display), 'Dela Gothic One', 'Syne', 'Impact', sans-serif;
-          font-size: clamp(3.8rem, 13.5vw, 12.5rem);
-          font-weight: 900;
-          line-height: 0.82;
-          letter-spacing: -0.02em;
-          color: #e6ff00;
+        .name-line {
+          font-family: 'Cosmico', sans-serif;
+          font-size: clamp(135px, 22.8vw, 321px);
+          line-height: 0.79;
+          letter-spacing: -0.015em;
+          color: #DF8F9C;
           text-transform: uppercase;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin: 0;
-          padding: 0;
-          text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-        }
-
-        .title-line {
-          display: block;
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          user-select: none;
           white-space: nowrap;
+          margin: 0;
         }
 
-        .status-label {
+        .line-sagar {
+          margin-left: 0.52em;
+        }
+
+        .hero-open-to-work {
           align-self: flex-end;
-          font-family: var(--font-mono);
-          font-size: clamp(0.65rem, 1.1vw, 0.85rem);
-          font-weight: 500;
-          letter-spacing: 0.22em;
-          color: #e6ff00;
+          margin-top: -2vw;
+          font-family: 'Quicksand', 'Manrope', sans-serif;
+          letter-spacing: 0.28em;
+          font-size: clamp(13px, 1.04vw, 17px);
+          color: #FFFFFF;
           text-transform: uppercase;
-          margin-top: 0.65rem;
-          padding-right: 0.2rem;
-          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          pointer-events: auto;
+        }
+
+        /* Accessible Screen Reader Only Class */
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border-width: 0;
         }
 
         @media (max-width: 768px) {
-          .eyebrow-text {
-            letter-spacing: 0.18em;
-            margin-bottom: 0.5rem;
+          .hero-photo-bg {
+            background-size: cover;
+            background-position: center;
           }
-          .hero-title {
-            line-height: 0.85;
+          .hero-name-block {
+            top: 18%;
+            left: 5%;
           }
-          .status-label {
-            letter-spacing: 0.15em;
-            margin-top: 0.4rem;
+          .hero-tagline {
+            margin-left: 0;
+            margin-bottom: 0.75vw;
+          }
+          .name-line {
+            font-size: clamp(3.9rem, 18.2vw, 110px);
+            line-height: 0.86;
+          }
+          .line-sagar {
+            margin-left: 0.35em;
+          }
+          .hero-open-to-work {
+            margin-top: 2.5vw;
+            align-self: flex-end;
           }
         }
       `}</style>

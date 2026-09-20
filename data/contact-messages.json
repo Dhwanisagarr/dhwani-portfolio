@@ -1,0 +1,20 @@
+[
+  {
+    "id": "msg-1789841392870",
+    "name": "aa",
+    "email": "dhwanisagar17@gmail.com",
+    "subject": "aa",
+    "message": "aa",
+    "date": "2026-09-19T18:09:52.870Z",
+    "read": false
+  },
+  {
+    "id": "msg-1789841145962",
+    "name": "Test User",
+    "email": "test@example.com",
+    "subject": "Portfolio Inquiry",
+    "message": "Hello Dhwani, great portfolio!",
+    "date": "2026-09-19T18:05:45.962Z",
+    "read": false
+  }
+]

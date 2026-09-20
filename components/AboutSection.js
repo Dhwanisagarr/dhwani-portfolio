@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import GalleryStack from './GalleryStack';
 
 export default function AboutSection() {
   return (
@@ -9,32 +10,38 @@ export default function AboutSection() {
         <div className="about-grid">
           {/* Left Column: Heading, Copy & Action Buttons */}
           <div className="about-left">
+            <span className="about-eyebrow font-mono">A Little About Me</span>
+
             <h2 className="about-heading font-mono">
-              <span className="heading-bright">Think. Design.</span>
-              <span className="heading-muted">Build.</span>
+              Oh, hi.
             </h2>
+
+            <h3 className="about-subheading font-mono">
+              Nice to meet you. I'm Dhwani Sagar.
+            </h3>
 
             <div className="about-copy font-sans">
               <p>
-                Hey! I'm Dhwani Sagar someone who enjoys figuring out why things work, why they don't, and how they could work better. I'm interested in the space where product thinking, design, and technology meet.
+                I'm someone who gets curious about people, problems, and how things work. That curiosity somehow took me through technology, design, and building things—and eventually made me interested in product.
               </p>
 
               <p>
-                I like starting with a problem, understanding the people around it, exploring possible solutions, and then bringing ideas to life whether that means shaping the product, designing the experience, or building it.
+                I like exploring ideas, figuring things out, and thinking about how something can be made better for the people using it.
               </p>
 
               <p>
-                Right now, I'm learning, experimenting, and looking for opportunities where I can grow through real products and real problems.
+                When I'm not doing that, I'm probably reading, painting, or going down some completely random internet rabbit hole.
               </p>
             </div>
 
             <div className="about-ctas">
               <a
                 href="/resume.pdf"
-                download="Dhwani_Sagar_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-cta btn-cta-yellow font-sans"
               >
-                <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FAF4D4" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" y1="15" x2="12" y2="3" />
@@ -52,15 +59,9 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Right Column: Personal Photo */}
+          {/* Right Column: Framer Gallery Stack Component */}
           <div className="about-right">
-            <div className="photo-wrapper">
-              <img
-                src="/dhwani_portrait.jpg"
-                alt="Dhwani Sagar"
-                className="portrait-img"
-              />
-            </div>
+            <GalleryStack />
           </div>
         </div>
       </div>
@@ -68,9 +69,9 @@ export default function AboutSection() {
       <style jsx>{`
         .about-section {
           position: relative;
-          background-color: #060606;
+          background-color: #F2D9DA;
           padding: 6.5rem 0;
-          color: #ffffff;
+          color: #660005;
           width: 100%;
         }
 
@@ -94,23 +95,30 @@ export default function AboutSection() {
           max-width: 580px;
         }
 
+        .about-eyebrow {
+          font-size: 0.8rem;
+          letter-spacing: 0.18em;
+          color: #660005;
+          font-weight: 700;
+          margin-bottom: 0.6rem;
+        }
+
         .about-heading {
-          font-size: clamp(2.8rem, 4.5vw, 4.2rem);
-          line-height: 1.15;
-          letter-spacing: -0.02em;
-          margin-bottom: 2.25rem;
-          display: flex;
-          flex-direction: column;
+          font-size: clamp(3rem, 5vw, 4.5rem);
+          line-height: 1.1;
+          letter-spacing: -0.03em;
+          margin-bottom: 0.75rem;
+          color: #660005;
+          font-weight: 700;
         }
 
-        .heading-bright {
-          color: #ffffff;
-          font-weight: 500;
-        }
-
-        .heading-muted {
-          color: #686868;
-          font-weight: 500;
+        .about-subheading {
+          font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+          line-height: 1.25;
+          letter-spacing: -0.01em;
+          margin-bottom: 1.75rem;
+          color: #660005;
+          font-weight: 600;
         }
 
         .about-copy {
@@ -119,11 +127,19 @@ export default function AboutSection() {
           gap: 1.35rem;
           font-size: clamp(0.95rem, 1.1vw, 1.05rem);
           line-height: 1.65;
-          color: #d1d1d6;
+          color: #660005;
         }
 
         .about-copy p {
           margin: 0;
+        }
+
+        .scroll-journey-hint {
+          font-size: 0.88rem;
+          color: #660005;
+          margin-top: 1.75rem;
+          letter-spacing: 0.05em;
+          opacity: 0.85;
         }
 
         .about-ctas {
@@ -158,28 +174,28 @@ export default function AboutSection() {
         }
 
         .btn-cta-yellow {
-          background-color: #efff00 !important;
-          color: #000000 !important;
-          border: 1px solid #efff00 !important;
+          background-color: #660005 !important;
+          color: #FAF4D4 !important;
+          border: 1px solid #660005 !important;
         }
 
         .btn-cta-yellow:hover, .btn-cta-yellow:focus, .btn-cta-yellow:active, .btn-cta-yellow:visited {
-          background-color: #f7ff40 !important;
-          color: #000000 !important;
+          background-color: #660005 !important;
+          color: #FAF4D4 !important;
           text-decoration: none !important;
           transform: translateY(-2px);
         }
 
         .btn-cta-charcoal {
-          background-color: #1a1a1a !important;
-          color: #ffffff !important;
-          border: 1px solid #efff00 !important;
+          background-color: #FAF4D4 !important;
+          color: #660005 !important;
+          border: 1px solid #660005 !important;
         }
 
         .btn-cta-charcoal:hover, .btn-cta-charcoal:focus, .btn-cta-charcoal:active, .btn-cta-charcoal:visited {
-          background-color: #262626 !important;
-          color: #ffffff !important;
-          border-color: #efff00 !important;
+          background-color: #E3BDBE !important;
+          color: #660005 !important;
+          border-color: #660005 !important;
           text-decoration: none !important;
           transform: translateY(-2px);
         }
@@ -210,7 +226,7 @@ export default function AboutSection() {
           height: 100%;
           display: block;
           object-fit: cover;
-          object-position: center 18%;
+          object-position: center 25%;
           border-radius: 4px;
         }
 

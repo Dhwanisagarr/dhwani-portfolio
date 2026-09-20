@@ -1,6 +1,6 @@
 import AboutSection from '../../components/AboutSection';
 import WorkEduSection from '../../components/WorkEduSection';
-import ToolsSection from '../../components/ToolsSection';
+import ExploreMoreSection from '../../components/ExploreMoreSection';
 import Footer from '../../components/Footer';
 
 export const metadata = {
@@ -11,19 +11,9 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="subpage-wrapper">
-      <div className="subpage-header">
-        <div className="container">
-          <span className="eyebrow">DHWANI SAGAR</span>
-          <h1 className="subpage-title font-mono">About Me</h1>
-          <p className="subpage-lead">
-            Understanding people, clarifying problems, and shaping thoughtful digital software experiences.
-          </p>
-        </div>
-      </div>
-
       <AboutSection />
       <WorkEduSection />
-      <ToolsSection />
+      <ExploreMoreSection />
       <Footer />
     </div>
   );

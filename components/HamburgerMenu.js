@@ -5,8 +5,8 @@ import { startTransition } from 'react';
 export default function HamburgerMenu({
   isOpen = false,
   onToggle,
-  strokeColor = '#ffffff',
-  activeColor = '#efff00',
+  strokeColor = '#F5F0DF',
+  activeColor = '#F5F0DF',
   strokeWidth = 2.5,
   size = 40
 }) {

@@ -47,8 +47,8 @@ export default function ZlandLoader({ durationMs = 2000 }) {
     };
   }, [durationMs]);
 
-  // Don't render until client-side hydration mounts, avoiding SSR hydration lock on mobile
-  if (!mounted || !visible) return null;
+  // Only hide once animation completes and fading finishes
+  if (!visible) return null;
 
   const bg = '#660005'; // Deep Red
   const rideColor = '#DF8F9C'; // Rose Pink
@@ -57,6 +57,7 @@ export default function ZlandLoader({ durationMs = 2000 }) {
   return (
     <div
       className={`zland-loader-overlay ${fading ? 'fading' : ''}`}
+      suppressHydrationWarning
       style={{
         position: 'fixed',
         top: 0,
@@ -78,7 +79,7 @@ export default function ZlandLoader({ durationMs = 2000 }) {
       }}
     >
       <div className="zland-scene-wrapper">
-        <ZLScene progress={progress} rideColor={rideColor} lightColor={lightColor} bg={bg} />
+        <ZLScene progress={mounted ? progress : 0} rideColor={rideColor} lightColor={lightColor} bg={bg} />
       </div>
 
       <style jsx global>{`

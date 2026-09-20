@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" data-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang="en" data-theme="dark" style={{ backgroundColor: '#660005' }} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -100,7 +100,7 @@ export default function RootLayout({ children }) {
           />
         */}
       </head>
-      <body>
+      <body style={{ backgroundColor: '#660005', margin: 0 }}>
         <ZlandLoader />
         <ProjectModalProvider>
           <CursorDotTrail />

@@ -3,7 +3,7 @@ import GlobalNav from '../components/GlobalNav';
 import CursorDotTrail from '../components/CursorDotTrail';
 import ZlandLoader from '../components/ZlandLoader';
 import { ProjectModalProvider } from '../context/ProjectModalContext';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 
 // TODO: [DEPLOYMENT] Replace 'https://dhwanisagar.com' with your purchased custom domain once live
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.com';

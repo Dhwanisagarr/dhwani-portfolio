@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // Custom Zland Amusement Park Loader themed in Red & Pink for Dhwani's Portfolio
 // Color palette: Background #660005 (Deep Red), Ride outlines #DF8F9C (Rose Pink), Accent Lights #FFD1DC (Light Soft Pink)
 
-export default function ZlandLoader({ durationMs = 2000 }) {
+export default function ZlandLoader({ durationMs = 1400 }) {
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(true);
   const [fading, setFading] = useState(false);
@@ -14,12 +14,11 @@ export default function ZlandLoader({ durationMs = 2000 }) {
   useEffect(() => {
     setMounted(true);
 
-    // Guaranteed failsafe timeout: Loader will ALWAYS hide after (durationMs + 400ms) max,
-    // preventing mobile browsers (iOS Safari / Android Low Power mode) from getting stuck
+    // Hard failsafe timeout: Loader hides after durationMs + 300ms max
     const failsafeTimeout = setTimeout(() => {
       setFading(true);
-      setTimeout(() => setVisible(false), 500);
-    }, durationMs + 400);
+      setTimeout(() => setVisible(false), 400);
+    }, durationMs + 300);
 
     const startTime = performance.now();
     let frameId;
@@ -35,7 +34,7 @@ export default function ZlandLoader({ durationMs = 2000 }) {
         setFading(true);
         setTimeout(() => {
           setVisible(false);
-        }, 500);
+        }, 400);
       }
     };
 
@@ -83,9 +82,22 @@ export default function ZlandLoader({ durationMs = 2000 }) {
       </div>
 
       <style jsx global>{`
+        @keyframes zll-auto-dismiss {
+          0% { opacity: 1; visibility: visible; pointer-events: auto; }
+          70% { opacity: 1; visibility: visible; pointer-events: auto; }
+          100% { opacity: 0; visibility: hidden; pointer-events: none; }
+        }
+
         .zland-loader-overlay {
           width: 100vw;
           height: 100dvh;
+          animation: zll-auto-dismiss 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .zland-loader-overlay.fading {
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
         }
 
         .zland-scene-wrapper {

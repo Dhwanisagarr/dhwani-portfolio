@@ -5,8 +5,8 @@ import ZlandLoader from '../components/ZlandLoader';
 import { ProjectModalProvider } from '../context/ProjectModalContext';
 import { Analytics } from '@vercel/analytics/next';
 
-// TODO: [DEPLOYMENT] Replace 'https://dhwanisagar.com' with your purchased custom domain once live
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.com';
+// Default production site URL
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.in';
 
 export const viewport = {
   width: 'device-width',
@@ -21,18 +21,20 @@ export const metadata = {
   keywords: ['Dhwani Sagar', 'Product Design', 'Software Engineer', 'Portfolio', 'Full Stack Developer', 'India', '4RinLabs'],
   authors: [{ name: 'Dhwani Sagar' }],
   alternates: {
-    canonical: '/',
+    canonical: 'https://dhwanisagar.in',
   },
   openGraph: {
-    title: 'Dhwani Sagar',
-    description: 'Crafting beautiful digital experiences',
-    url: SITE_URL,
+    title: 'Dhwani Sagar — Personal Portfolio',
+    description: 'Crafting beautiful digital experiences — Product Thinking, User Experience Design, and Software Technology.',
+    url: 'https://dhwanisagar.in',
     siteName: 'Dhwani Sagar Portfolio',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://dhwanisagar.in/og-image.png',
+        secureUrl: 'https://dhwanisagar.in/og-image.png',
         width: 1200,
         height: 630,
+        type: 'image/png',
         alt: 'Dhwani Sagar — Personal Portfolio',
       },
     ],
@@ -41,9 +43,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dhwani Sagar',
-    description: 'Crafting beautiful digital experiences',
-    images: ['/og-image.png'],
+    title: 'Dhwani Sagar — Personal Portfolio',
+    description: 'Crafting beautiful digital experiences — Product Thinking, User Experience Design, and Software Technology.',
+    images: ['https://dhwanisagar.in/og-image.png'],
   },
 };
 

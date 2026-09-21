@@ -69,49 +69,35 @@ export default function HeroSection() {
           position: relative;
           width: 100%;
           max-width: 100%;
+          height: 100vh;
           min-height: 100vh;
-          min-height: 100dvh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           background-color: #660005;
           overflow: hidden;
           box-sizing: border-box;
         }
 
         .hero-content-wrapper {
-          position: relative;
+          position: absolute;
+          inset: 0;
           z-index: 10;
-          width: 100%;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 2rem 1.5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          box-sizing: border-box;
+          pointer-events: none;
         }
 
         .hero-name-block {
+          position: absolute;
+          top: 16%;
+          left: 15%;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          width: 100%;
-          max-width: 100%;
-          box-sizing: border-box;
           pointer-events: auto;
         }
 
         .hero-tagline {
           font-family: 'Quicksand', 'Manrope', sans-serif;
           letter-spacing: 0.32em;
-          font-size: clamp(11px, 1.2vw, 17px);
+          font-size: clamp(13px, 1.17vw, 18px);
           color: #FFFFFF;
-          margin: 0 0 1.25rem 0;
-          text-align: center;
+          margin: 0 0 0.15vw 13vw;
           text-transform: uppercase;
           text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
           pointer-events: auto;
@@ -119,8 +105,8 @@ export default function HeroSection() {
 
         .name-line {
           font-family: 'Cosmico', sans-serif;
-          font-size: clamp(3.2rem, 16.5vw, 210px);
-          line-height: 0.85;
+          font-size: clamp(135px, 22.8vw, 321px);
+          line-height: 0.79;
           letter-spacing: -0.015em;
           color: #DF8F9C;
           text-transform: uppercase;
@@ -128,28 +114,22 @@ export default function HeroSection() {
           user-select: none;
           white-space: nowrap;
           margin: 0;
-          text-align: center;
-        }
-
-        .line-dhwani {
-          margin: 0;
         }
 
         .line-sagar {
-          margin: 0;
+          margin-left: 0.52em;
         }
 
         .hero-open-to-work {
-          align-self: center;
-          margin-top: 1.5rem;
+          align-self: flex-end;
+          margin-top: -2vw;
           font-family: 'Quicksand', 'Manrope', sans-serif;
           letter-spacing: 0.28em;
-          font-size: clamp(11px, 1.1vw, 16px);
+          font-size: clamp(13px, 1.04vw, 17px);
           color: #FFFFFF;
           text-transform: uppercase;
           text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
           pointer-events: auto;
-          text-align: center;
         }
 
         /* Accessible Screen Reader Only Class */
@@ -166,20 +146,28 @@ export default function HeroSection() {
         }
 
         @media (max-width: 768px) {
-          .hero-container {
-            padding: 1.5rem 1rem;
+          .hero-photo-bg {
+            background-size: cover;
+            background-position: center;
+          }
+          .hero-name-block {
+            top: 18%;
+            left: 5%;
           }
           .hero-tagline {
-            letter-spacing: 0.22em;
-            margin-bottom: 1rem;
+            margin-left: 0;
+            margin-bottom: 0.75vw;
           }
           .name-line {
-            font-size: clamp(2.8rem, 15.5vw, 90px);
-            line-height: 0.88;
+            font-size: clamp(3.9rem, 18.2vw, 110px);
+            line-height: 0.86;
+          }
+          .line-sagar {
+            margin-left: 0.35em;
           }
           .hero-open-to-work {
-            margin-top: 1.25rem;
-            letter-spacing: 0.22em;
+            margin-top: 2.5vw;
+            align-self: flex-end;
           }
         }
       `}</style>

@@ -24,8 +24,8 @@ export default function HeroSection() {
         <div className="hero-name-block">
           {/* 1. Tagline */}
           <motion.p
-            initial={{ opacity: 0, x: 300 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ ...springTransition, delay: 0.1 }}
             className="hero-tagline"
           >
@@ -34,8 +34,8 @@ export default function HeroSection() {
 
           {/* 2. DHWANI line */}
           <motion.div
-            initial={{ opacity: 0, x: 300 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ ...springTransition, delay: 0.25 }}
             className="name-line line-dhwani"
           >
@@ -44,18 +44,18 @@ export default function HeroSection() {
 
           {/* 3. SAGAR line */}
           <motion.div
-            initial={{ opacity: 0, x: 300 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ ...springTransition, delay: 0.4 }}
             className="name-line line-sagar"
           >
             SAGAR
           </motion.div>
 
-          {/* 4. Open to Work Text - Right aligned under R of SAGAR */}
+          {/* 4. Open to Work Text */}
           <motion.div
-            initial={{ opacity: 0, x: 300 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ ...springTransition, delay: 0.55 }}
             className="hero-open-to-work"
           >
@@ -68,44 +68,66 @@ export default function HeroSection() {
         .hero-container {
           position: relative;
           width: 100%;
-          max-width: 100%;
+          max-width: 100vw;
           height: 100vh;
+          height: 100dvh;
           min-height: 100vh;
           background-color: #660005;
           overflow: hidden;
           box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .hero-content-wrapper {
-          position: absolute;
-          inset: 0;
+          position: relative;
           z-index: 10;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          box-sizing: border-box;
           pointer-events: none;
         }
 
         .hero-name-block {
-          position: absolute;
-          top: 16%;
-          left: 15%;
-          display: flex;
+          position: relative;
+          display: inline-flex;
           flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          margin: 0 auto;
           pointer-events: auto;
+          box-sizing: border-box;
+          /* Master locked ratio controller */
+          font-size: clamp(34px, 14vw, 120px);
+        }
+
+        @media (min-width: 992px) {
+          .hero-name-block {
+            font-size: clamp(120px, 18.5vw, 360px);
+          }
         }
 
         .hero-tagline {
           font-family: 'Quicksand', 'Manrope', sans-serif;
           letter-spacing: 0.32em;
-          font-size: clamp(13px, 1.17vw, 18px);
+          font-size: 0.056em;
           color: #FFFFFF;
-          margin: 0 0 0.15vw 13vw;
+          margin: 0 0 0.15em 0.81em;
           text-transform: uppercase;
           text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          white-space: nowrap;
           pointer-events: auto;
         }
 
         .name-line {
           font-family: 'Cosmico', sans-serif;
-          font-size: clamp(135px, 22.8vw, 321px);
+          font-size: 1em;
           line-height: 0.79;
           letter-spacing: -0.015em;
           color: #DF8F9C;
@@ -116,19 +138,24 @@ export default function HeroSection() {
           margin: 0;
         }
 
+        .line-dhwani {
+          margin: 0;
+        }
+
         .line-sagar {
           margin-left: 0.52em;
         }
 
         .hero-open-to-work {
           align-self: flex-end;
-          margin-top: -2vw;
+          margin-top: -0.08em;
           font-family: 'Quicksand', 'Manrope', sans-serif;
           letter-spacing: 0.28em;
-          font-size: clamp(13px, 1.04vw, 17px);
+          font-size: 0.052em;
           color: #FFFFFF;
           text-transform: uppercase;
           text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          white-space: nowrap;
           pointer-events: auto;
         }
 
@@ -143,32 +170,6 @@ export default function HeroSection() {
           clip: rect(0, 0, 0, 0);
           white-space: nowrap;
           border-width: 0;
-        }
-
-        @media (max-width: 768px) {
-          .hero-photo-bg {
-            background-size: cover;
-            background-position: center;
-          }
-          .hero-name-block {
-            top: 18%;
-            left: 5%;
-          }
-          .hero-tagline {
-            margin-left: 0;
-            margin-bottom: 0.75vw;
-          }
-          .name-line {
-            font-size: clamp(3.9rem, 18.2vw, 110px);
-            line-height: 0.86;
-          }
-          .line-sagar {
-            margin-left: 0.35em;
-          }
-          .hero-open-to-work {
-            margin-top: 2.5vw;
-            align-self: flex-end;
-          }
         }
       `}</style>
     </section>

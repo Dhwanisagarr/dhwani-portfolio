@@ -105,9 +105,9 @@ export default function PersonalGallerySection() {
         .gallery-header-container {
           position: relative;
           width: 100%;
-          max-width: 1320px;
+          max-width: 1680px;
           margin: 0 auto 3.5rem auto;
-          padding: 0 3.5rem;
+          padding: 0 clamp(1.5rem, 5vw, 5rem);
           display: flex;
           flex-direction: column;
         }

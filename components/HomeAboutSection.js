@@ -96,22 +96,22 @@ export default function HomeAboutSection() {
           position: relative;
           z-index: 2;
           width: 100%;
-          max-width: 1320px;
+          max-width: 1680px;
           margin: 0 auto;
-          padding: 0 3.5rem;
+          padding: 0 clamp(1.5rem, 5vw, 5rem);
         }
 
         .about-grid {
           display: grid;
           grid-template-columns: 1.05fr 0.95fr;
-          gap: 4.5rem;
+          gap: clamp(2rem, 5vw, 5rem);
           align-items: center;
         }
 
         .about-left {
           display: flex;
           flex-direction: column;
-          max-width: 580px;
+          max-width: 100%;
         }
 
         .eyebrow-row {

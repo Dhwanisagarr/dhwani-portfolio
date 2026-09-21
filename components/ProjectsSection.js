@@ -317,9 +317,9 @@ export default function ProjectsSection() {
           position: relative;
           z-index: 5;
           width: 100%;
-          max-width: 1340px;
+          max-width: 1680px;
           margin: 0 auto;
-          padding: 0 3.5rem;
+          padding: 0 clamp(1.5rem, 5vw, 5rem);
           display: flex;
           align-items: flex-end;
           justify-content: space-between;

@@ -412,9 +412,9 @@ export default function WorkEduSection() {
         .work-edu-container {
           position: relative;
           width: 100%;
-          max-width: 1320px;
+          max-width: 1680px;
           margin: 0 auto;
-          padding: 0 3.5rem;
+          padding: 0 clamp(1.5rem, 5vw, 5rem);
           display: flex;
           flex-direction: column;
         }
@@ -422,7 +422,7 @@ export default function WorkEduSection() {
         .experience-header {
           display: flex;
           flex-direction: column;
-          max-width: 780px;
+          max-width: 100%;
           margin-bottom: 4rem;
         }
 

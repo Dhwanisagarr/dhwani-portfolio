@@ -433,9 +433,9 @@ export default function ToolsSection() {
           position: relative;
           z-index: 2;
           width: 100%;
-          max-width: 1320px;
+          max-width: 1680px;
           margin: 0 auto;
-          padding: 0 3.5rem;
+          padding: 0 clamp(1.5rem, 5vw, 5rem);
         }
 
         .tools-header {

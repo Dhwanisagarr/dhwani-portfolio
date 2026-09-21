@@ -578,9 +578,9 @@ html[data-theme="light"] .time-text {
   position: relative !important;
   z-index: 5 !important;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1680px;
   margin: 0 auto;
-  padding: 5rem 2rem 8rem 2rem;
+  padding: 5rem clamp(1.5rem, 5vw, 5rem) 8rem clamp(1.5rem, 5vw, 5rem);
   box-sizing: border-box;
 }
 
@@ -1426,9 +1426,9 @@ html[data-theme="light"] .time-text {
   position: relative !important;
   z-index: 5 !important;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1680px;
   margin: 0 auto;
-  padding: 5rem 2rem 7rem 2rem;
+  padding: 5rem clamp(1.5rem, 5vw, 5rem) 7rem clamp(1.5rem, 5vw, 5rem);
   box-sizing: border-box;
 }
 
@@ -1811,9 +1811,10 @@ html[data-theme="light"] .time-text {
 }
 
 .bk-page-container {
-  max-width: 1200px !important;
+  width: 100% !important;
+  max-width: 1680px !important;
   margin: 0 auto !important;
-  padding: 4rem 2rem 6rem 2rem !important;
+  padding: 4rem clamp(1.5rem, 5vw, 5rem) 6rem clamp(1.5rem, 5vw, 5rem) !important;
   position: relative !important;
   z-index: 2 !important;
 }
@@ -2495,9 +2496,10 @@ html[data-theme="light"] .time-text {
 }
 
 .ep-page-container {
-  max-width: 1000px !important;
+  width: 100% !important;
+  max-width: 1680px !important;
   margin: 0 auto !important;
-  padding: 4.5rem 2rem 7rem 2rem !important;
+  padding: 4.5rem clamp(1.5rem, 5vw, 5rem) 7rem clamp(1.5rem, 5vw, 5rem) !important;
   position: relative !important;
   z-index: 2 !important;
 }
@@ -2830,9 +2832,10 @@ html[data-theme="light"] .time-text {
 }
 
 .ct-page-container {
-  max-width: 1200px !important;
+  width: 100% !important;
+  max-width: 1680px !important;
   margin: 0 auto !important;
-  padding: 4.5rem 2rem 6rem 2rem !important;
+  padding: 4.5rem clamp(1.5rem, 5vw, 5rem) 6rem clamp(1.5rem, 5vw, 5rem) !important;
   position: relative !important;
   z-index: 2 !important;
 }

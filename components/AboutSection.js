@@ -81,16 +81,16 @@ export default function AboutSection() {
           position: relative;
           z-index: 10;
           width: 100%;
-          max-width: 1280px;
+          max-width: 1680px;
           margin: 0 auto;
-          padding: 0 3.5rem;
+          padding: 0 clamp(1.5rem, 5vw, 5rem);
           box-sizing: border-box;
         }
 
         .about-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 3.5rem;
+          gap: clamp(2rem, 5vw, 5rem);
           align-items: center;
           width: 100%;
           box-sizing: border-box;
@@ -99,7 +99,7 @@ export default function AboutSection() {
         .about-left {
           display: flex;
           flex-direction: column;
-          max-width: 580px;
+          max-width: 100%;
           width: 100%;
           box-sizing: border-box;
           position: relative;

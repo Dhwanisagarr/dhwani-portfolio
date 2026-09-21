@@ -133,9 +133,9 @@ export default function CtaSection() {
 
         .cta-container {
           width: 100%;
-          max-width: 1280px;
+          max-width: 1680px;
           margin: 0 auto;
-          padding: 0 3.5rem;
+          padding: 0 clamp(1.5rem, 5vw, 5rem);
         }
 
         /* Top Header */

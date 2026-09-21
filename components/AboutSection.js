@@ -73,26 +73,37 @@ export default function AboutSection() {
           padding: 6.5rem 0;
           color: #660005;
           width: 100%;
+          box-sizing: border-box;
+          overflow: hidden;
         }
 
         .about-container {
+          position: relative;
+          z-index: 10;
           width: 100%;
-          max-width: 1320px;
+          max-width: 1280px;
           margin: 0 auto;
           padding: 0 3.5rem;
+          box-sizing: border-box;
         }
 
         .about-grid {
           display: grid;
-          grid-template-columns: 1.05fr 0.95fr;
-          gap: 4.5rem;
+          grid-template-columns: 1fr 1fr;
+          gap: 3.5rem;
           align-items: center;
+          width: 100%;
+          box-sizing: border-box;
         }
 
         .about-left {
           display: flex;
           flex-direction: column;
           max-width: 580px;
+          width: 100%;
+          box-sizing: border-box;
+          position: relative;
+          z-index: 15;
         }
 
         .about-eyebrow {
@@ -104,7 +115,7 @@ export default function AboutSection() {
         }
 
         .about-heading {
-          font-size: clamp(3rem, 5vw, 4.5rem);
+          font-size: clamp(2.8rem, 4.5vw, 4.2rem);
           line-height: 1.1;
           letter-spacing: -0.03em;
           margin-bottom: 0.75rem;
@@ -113,7 +124,7 @@ export default function AboutSection() {
         }
 
         .about-subheading {
-          font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+          font-size: clamp(1.3rem, 2vw, 1.9rem);
           line-height: 1.25;
           letter-spacing: -0.01em;
           margin-bottom: 1.75rem;
@@ -134,20 +145,15 @@ export default function AboutSection() {
           margin: 0;
         }
 
-        .scroll-journey-hint {
-          font-size: 0.88rem;
-          color: #660005;
-          margin-top: 1.75rem;
-          letter-spacing: 0.05em;
-          opacity: 0.85;
-        }
-
         .about-ctas {
           display: flex;
           flex-direction: row;
           align-items: center;
           gap: 1rem;
           margin-top: 2.5rem;
+          position: relative;
+          z-index: 25;
+          pointer-events: auto !important;
         }
 
         .btn-cta {
@@ -170,6 +176,9 @@ export default function AboutSection() {
           white-space: nowrap !important;
           box-sizing: border-box !important;
           cursor: pointer;
+          position: relative;
+          z-index: 25;
+          pointer-events: auto !important;
           transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
         }
 
@@ -207,33 +216,30 @@ export default function AboutSection() {
 
         .about-right {
           display: flex;
-          justify-content: flex-end;
+          justify-content: center;
           align-items: center;
-        }
-
-        .photo-wrapper {
-          position: relative;
           width: 100%;
-          max-width: 490px;
-          height: 430px;
-          border-radius: 4px;
+          box-sizing: border-box;
           overflow: hidden;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          padding: 1rem 0;
         }
 
-        .portrait-img {
-          width: 100%;
-          height: 100%;
-          display: block;
-          object-fit: cover;
-          object-position: center 25%;
-          border-radius: 4px;
+        @media (max-width: 1280px) {
+          .about-container {
+            padding: 0 2.5rem;
+          }
+          .about-grid {
+            gap: 2.5rem;
+          }
         }
 
         @media (max-width: 1024px) {
+          .about-section {
+            padding: 4.5rem 0;
+          }
           .about-grid {
             grid-template-columns: 1fr;
-            gap: 3.5rem;
+            gap: 3rem;
           }
           .about-left {
             max-width: 100%;
@@ -241,14 +247,11 @@ export default function AboutSection() {
           .about-right {
             justify-content: center;
           }
-          .photo-wrapper {
-            max-width: 100%;
-          }
         }
 
         @media (max-width: 640px) {
           .about-container {
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
           }
           .about-ctas {
             flex-direction: column;

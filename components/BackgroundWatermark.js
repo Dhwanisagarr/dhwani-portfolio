@@ -89,9 +89,9 @@ export default function BackgroundWatermark({
           flex-direction: column;
           justify-content: space-around;
           color: ${color};
-          pointer-events: none;
-          user-select: none;
-          z-index: 1;
+          pointer-events: none !important;
+          user-select: none !important;
+          z-index: 0 !important;
           overflow: hidden !important;
           white-space: nowrap !important;
           padding: 3rem 0;

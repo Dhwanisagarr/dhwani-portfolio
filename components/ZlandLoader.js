@@ -98,6 +98,7 @@ export default function ZlandLoader({ durationMs = 1400 }) {
           opacity: 0 !important;
           visibility: hidden !important;
           pointer-events: none !important;
+          z-index: -1 !important;
         }
 
         .zland-scene-wrapper {

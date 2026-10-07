@@ -20,6 +20,9 @@ export const metadata = {
   description: 'Crafting beautiful digital experiences — Product Thinking, User Experience Design, and Software Technology.',
   keywords: ['Dhwani Sagar', 'Product Design', 'Software Engineer', 'Portfolio', 'Full Stack Developer', 'India', '4RinLabs'],
   authors: [{ name: 'Dhwani Sagar' }],
+  verification: {
+    google: 'wZtpyrA0uMQHo00-qBkI_NcVttWpCkh9rcj2t40M8z4',
+  },
   alternates: {
     canonical: 'https://dhwanisagar.in',
   },

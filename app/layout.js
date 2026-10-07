@@ -6,7 +6,7 @@ import { ProjectModalProvider } from '../context/ProjectModalContext';
 import { Analytics } from '@vercel/analytics/next';
 
 // Default production site URL
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dhwanisagar.in';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.in';
 
 export const viewport = {
   width: 'device-width',
@@ -24,17 +24,17 @@ export const metadata = {
     google: 'wZtpyrA0uMQHo00-qBkI_NcVttWpCkh9rcj2t40M8z4',
   },
   alternates: {
-    canonical: 'https://www.dhwanisagar.in',
+    canonical: 'https://dhwanisagar.in',
   },
   openGraph: {
     title: 'Dhwani Sagar — Personal Portfolio',
     description: 'Crafting beautiful digital experiences — Product Thinking, User Experience Design, and Software Technology.',
-    url: 'https://www.dhwanisagar.in',
+    url: 'https://dhwanisagar.in',
     siteName: 'Dhwani Sagar Portfolio',
     images: [
       {
-        url: 'https://www.dhwanisagar.in/og-image.png',
-        secureUrl: 'https://www.dhwanisagar.in/og-image.png',
+        url: 'https://dhwanisagar.in/og-image.png',
+        secureUrl: 'https://dhwanisagar.in/og-image.png',
         width: 1200,
         height: 630,
         type: 'image/png',
@@ -48,7 +48,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Dhwani Sagar — Personal Portfolio',
     description: 'Crafting beautiful digital experiences — Product Thinking, User Experience Design, and Software Technology.',
-    images: ['https://www.dhwanisagar.in/og-image.png'],
+    images: ['https://dhwanisagar.in/og-image.png'],
   },
 };
 

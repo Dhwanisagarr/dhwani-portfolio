@@ -1,8 +1,7 @@
 import blogsData from '../data/blogs.json';
 import projectsData from '../data/projects.json';
 
-// TODO: [DEPLOYMENT] Replace 'https://dhwanisagar.com' with your purchased custom domain once live
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.in';
 
 export default async function sitemap() {
   const staticRoutes = [

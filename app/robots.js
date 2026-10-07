@@ -1,5 +1,4 @@
-// TODO: [DEPLOYMENT] Replace 'https://dhwanisagar.com' with your purchased custom domain once live
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.in';
 
 export default function robots() {
   return {

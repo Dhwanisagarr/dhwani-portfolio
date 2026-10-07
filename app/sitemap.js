@@ -1,7 +1,7 @@
 import blogsData from '../data/blogs.json';
 import projectsData from '../data/projects.json';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.in';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dhwanisagar.in';
 
 export default async function sitemap() {
   const staticRoutes = [

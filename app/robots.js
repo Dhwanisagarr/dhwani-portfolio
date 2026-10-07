@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dhwanisagar.in';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dhwanisagar.in';
 
 export default function robots() {
   return {

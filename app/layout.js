@@ -26,6 +26,15 @@ export const metadata = {
   alternates: {
     canonical: 'https://dhwanisagar.in',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: 'Dhwani Sagar — Personal Portfolio',
     description: 'Crafting beautiful digital experiences — Product Thinking, User Experience Design, and Software Technology.',
